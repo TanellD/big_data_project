@@ -1,4 +1,6 @@
+Cython
 pylint
 pyspark
 pandas
 streamlit
+psycopg2-binary

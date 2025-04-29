@@ -1,0 +1,25 @@
+{
+  "type" : "record",
+  "name" : "listing_features",
+  "doc" : "Sqoop import of listing_features",
+  "fields" : [ {
+    "name" : "listing_id",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "listing_id",
+    "sqlType" : "12"
+  }, {
+    "name" : "feature_name",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "feature_name",
+    "sqlType" : "12"
+  }, {
+    "name" : "feature_value",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "feature_value",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "listing_features"
+}

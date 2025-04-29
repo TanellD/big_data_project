@@ -1,0 +1,409 @@
+{
+  "type" : "record",
+  "name" : "listings",
+  "doc" : "Sqoop import of listings",
+  "fields" : [ {
+    "name" : "id",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "id",
+    "sqlType" : "12"
+  }, {
+    "name" : "listing_url",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "listing_url",
+    "sqlType" : "12"
+  }, {
+    "name" : "scrape_id",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "scrape_id",
+    "sqlType" : "12"
+  }, {
+    "name" : "last_scraped",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "last_scraped",
+    "sqlType" : "91"
+  }, {
+    "name" : "name",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "name",
+    "sqlType" : "12"
+  }, {
+    "name" : "summary",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "summary",
+    "sqlType" : "12"
+  }, {
+    "name" : "space",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "space",
+    "sqlType" : "12"
+  }, {
+    "name" : "description",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "description",
+    "sqlType" : "12"
+  }, {
+    "name" : "experiences_offered",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "experiences_offered",
+    "sqlType" : "12"
+  }, {
+    "name" : "neighborhood_overview",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "neighborhood_overview",
+    "sqlType" : "12"
+  }, {
+    "name" : "notes",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "notes",
+    "sqlType" : "12"
+  }, {
+    "name" : "transit",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "transit",
+    "sqlType" : "12"
+  }, {
+    "name" : "access",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "access",
+    "sqlType" : "12"
+  }, {
+    "name" : "interaction",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "interaction",
+    "sqlType" : "12"
+  }, {
+    "name" : "house_rules",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "house_rules",
+    "sqlType" : "12"
+  }, {
+    "name" : "thumbnail_url",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "thumbnail_url",
+    "sqlType" : "12"
+  }, {
+    "name" : "medium_url",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "medium_url",
+    "sqlType" : "12"
+  }, {
+    "name" : "picture_url",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "picture_url",
+    "sqlType" : "12"
+  }, {
+    "name" : "xl_picture_url",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "xl_picture_url",
+    "sqlType" : "12"
+  }, {
+    "name" : "host_id",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_id",
+    "sqlType" : "2"
+  }, {
+    "name" : "street",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "street",
+    "sqlType" : "12"
+  }, {
+    "name" : "neighbourhood",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "neighbourhood",
+    "sqlType" : "12"
+  }, {
+    "name" : "neighbourhood_cleansed",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "neighbourhood_cleansed",
+    "sqlType" : "12"
+  }, {
+    "name" : "neighbourhood_group_cleansed",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "neighbourhood_group_cleansed",
+    "sqlType" : "12"
+  }, {
+    "name" : "city",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "city",
+    "sqlType" : "12"
+  }, {
+    "name" : "state",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "state",
+    "sqlType" : "12"
+  }, {
+    "name" : "zipcode",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "zipcode",
+    "sqlType" : "12"
+  }, {
+    "name" : "market",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "market",
+    "sqlType" : "12"
+  }, {
+    "name" : "smart_location",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "smart_location",
+    "sqlType" : "12"
+  }, {
+    "name" : "country_code",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "country_code",
+    "sqlType" : "12"
+  }, {
+    "name" : "country",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "country",
+    "sqlType" : "12"
+  }, {
+    "name" : "latitude",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "latitude",
+    "sqlType" : "2"
+  }, {
+    "name" : "longitude",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "longitude",
+    "sqlType" : "2"
+  }, {
+    "name" : "geolocation",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "geolocation",
+    "sqlType" : "12"
+  }, {
+    "name" : "property_type",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "property_type",
+    "sqlType" : "12"
+  }, {
+    "name" : "room_type",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "room_type",
+    "sqlType" : "12"
+  }, {
+    "name" : "accommodates",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "accommodates",
+    "sqlType" : "2"
+  }, {
+    "name" : "bathrooms",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "bathrooms",
+    "sqlType" : "2"
+  }, {
+    "name" : "bedrooms",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "bedrooms",
+    "sqlType" : "2"
+  }, {
+    "name" : "beds",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "beds",
+    "sqlType" : "2"
+  }, {
+    "name" : "bed_type",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "bed_type",
+    "sqlType" : "12"
+  }, {
+    "name" : "amenities",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "amenities",
+    "sqlType" : "12"
+  }, {
+    "name" : "square_feet",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "square_feet",
+    "sqlType" : "2"
+  }, {
+    "name" : "price",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "price",
+    "sqlType" : "12"
+  }, {
+    "name" : "weekly_price",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "weekly_price",
+    "sqlType" : "12"
+  }, {
+    "name" : "monthly_price",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "monthly_price",
+    "sqlType" : "12"
+  }, {
+    "name" : "security_deposit",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "security_deposit",
+    "sqlType" : "12"
+  }, {
+    "name" : "cleaning_fee",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "cleaning_fee",
+    "sqlType" : "12"
+  }, {
+    "name" : "guests_included",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "guests_included",
+    "sqlType" : "2"
+  }, {
+    "name" : "extra_people",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "extra_people",
+    "sqlType" : "12"
+  }, {
+    "name" : "minimum_nights",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "minimum_nights",
+    "sqlType" : "2"
+  }, {
+    "name" : "maximum_nights",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "maximum_nights",
+    "sqlType" : "2"
+  }, {
+    "name" : "calendar_updated",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "calendar_updated",
+    "sqlType" : "12"
+  }, {
+    "name" : "has_availability",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "has_availability",
+    "sqlType" : "12"
+  }, {
+    "name" : "availability_30",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "availability_30",
+    "sqlType" : "2"
+  }, {
+    "name" : "availability_60",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "availability_60",
+    "sqlType" : "2"
+  }, {
+    "name" : "availability_90",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "availability_90",
+    "sqlType" : "2"
+  }, {
+    "name" : "availability_365",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "availability_365",
+    "sqlType" : "2"
+  }, {
+    "name" : "calendar_last_scraped",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "calendar_last_scraped",
+    "sqlType" : "91"
+  }, {
+    "name" : "number_of_reviews",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "number_of_reviews",
+    "sqlType" : "2"
+  }, {
+    "name" : "first_review",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "first_review",
+    "sqlType" : "91"
+  }, {
+    "name" : "last_review",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "last_review",
+    "sqlType" : "91"
+  }, {
+    "name" : "license",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "license",
+    "sqlType" : "12"
+  }, {
+    "name" : "jurisdiction_names",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "jurisdiction_names",
+    "sqlType" : "12"
+  }, {
+    "name" : "cancellation_policy",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "cancellation_policy",
+    "sqlType" : "12"
+  }, {
+    "name" : "calculated_host_listings_count",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "calculated_host_listings_count",
+    "sqlType" : "2"
+  }, {
+    "name" : "reviews_per_month",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "reviews_per_month",
+    "sqlType" : "2"
+  } ],
+  "tableName" : "listings"
+}

@@ -1,0 +1,247 @@
+log4j:WARN No appenders could be found for logger (org.apache.hadoop.util.Shell).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Connecting to jdbc:hive2://hadoop-03.uni.innopolis.ru:10001
+Connected to: Apache Hive (version 3.1.3)
+Driver: Hive JDBC (version 2.3.9)
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team19_projectdb;
+INFO  : Compiling command(queryId=hive_20250428142926_7a623718-b364-4dd6-b8b9-8231920c4a4e): USE team19_projectdb
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+INFO  : EXPLAIN output for queryid hive_20250428142926_7a623718-b364-4dd6-b8b9-8231920c4a4e : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [DDL]
+
+STAGE PLANS:
+  Stage: Stage-0
+
+
+INFO  : Completed compiling command(queryId=hive_20250428142926_7a623718-b364-4dd6-b8b9-8231920c4a4e); Time taken: 0.049 seconds
+INFO  : Executing command(queryId=hive_20250428142926_7a623718-b364-4dd6-b8b9-8231920c4a4e): USE team19_projectdb
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20250428142926_7a623718-b364-4dd6-b8b9-8231920c4a4e); Time taken: 0.006 seconds
+INFO  : OK
+No rows affected (0.11 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DESCRIBE hosts;
+INFO  : Compiling command(queryId=hive_20250428142926_8ea00368-c8de-437f-96f3-76c915b13198): DESCRIBE hosts
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:col_name, type:string, comment:from deserializer), FieldSchema(name:data_type, type:string, comment:from deserializer), FieldSchema(name:comment, type:string, comment:from deserializer)], properties:null)
+INFO  : EXPLAIN output for queryid hive_20250428142926_8ea00368-c8de-437f-96f3-76c915b13198 : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [DDL]
+  Stage-1 depends on stages: Stage-0 [FETCH]
+
+STAGE PLANS:
+  Stage: Stage-0
+      Describe Table Operator:
+        Describe Table
+          result file: file:/tmp/hive/be01e452-f493-4d6b-aa0e-770c442afa98/hive_2025-04-28_14-29-26_562_5312238072661198978-73/-local-10000
+          table: hosts
+
+  Stage: Stage-1
+    Fetch Operator
+      limit: -1
+      Processor Tree:
+        ListSink
+
+
+INFO  : Completed compiling command(queryId=hive_20250428142926_8ea00368-c8de-437f-96f3-76c915b13198); Time taken: 0.035 seconds
+INFO  : Executing command(queryId=hive_20250428142926_8ea00368-c8de-437f-96f3-76c915b13198): DESCRIBE hosts
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20250428142926_8ea00368-c8de-437f-96f3-76c915b13198); Time taken: 0.014 seconds
+INFO  : OK
++----------------------------+------------+----------+
+|          col_name          | data_type  | comment  |
++----------------------------+------------+----------+
+| host_id                    | string     |          |
+| host_url                   | string     |          |
+| host_name                  | string     |          |
+| host_since                 | bigint     |          |
+| host_location              | string     |          |
+| host_about                 | string     |          |
+| host_response_time         | string     |          |
+| host_response_rate         | string     |          |
+| host_acceptance_rate       | string     |          |
+| host_thumbnail_url         | string     |          |
+| host_picture_url           | string     |          |
+| host_neighbourhood         | string     |          |
+| host_listings_count        | string     |          |
+| host_total_listings_count  | string     |          |
+| host_verifications         | string     |          |
++----------------------------+------------+----------+
+15 rows selected (0.11 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DESCRIBE listings;
+INFO  : Compiling command(queryId=hive_20250428142926_30bb6125-f4f8-4c3b-9cbb-4ef6afc57392): DESCRIBE listings
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:col_name, type:string, comment:from deserializer), FieldSchema(name:data_type, type:string, comment:from deserializer), FieldSchema(name:comment, type:string, comment:from deserializer)], properties:null)
+INFO  : EXPLAIN output for queryid hive_20250428142926_30bb6125-f4f8-4c3b-9cbb-4ef6afc57392 : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [DDL]
+  Stage-1 depends on stages: Stage-0 [FETCH]
+
+STAGE PLANS:
+  Stage: Stage-0
+      Describe Table Operator:
+        Describe Table
+          result file: file:/tmp/hive/be01e452-f493-4d6b-aa0e-770c442afa98/hive_2025-04-28_14-29-26_680_7681102751742880492-73/-local-10000
+          table: listings
+
+  Stage: Stage-1
+    Fetch Operator
+      limit: -1
+      Processor Tree:
+        ListSink
+
+
+INFO  : Completed compiling command(queryId=hive_20250428142926_30bb6125-f4f8-4c3b-9cbb-4ef6afc57392); Time taken: 0.032 seconds
+INFO  : Executing command(queryId=hive_20250428142926_30bb6125-f4f8-4c3b-9cbb-4ef6afc57392): DESCRIBE listings
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20250428142926_30bb6125-f4f8-4c3b-9cbb-4ef6afc57392); Time taken: 0.012 seconds
+INFO  : OK
++---------------------------------+------------+----------+
+|            col_name             | data_type  | comment  |
++---------------------------------+------------+----------+
+| id                              | string     |          |
+| listing_url                     | string     |          |
+| scrape_id                       | string     |          |
+| last_scraped                    | bigint     |          |
+| name                            | string     |          |
+| summary                         | string     |          |
+| space                           | string     |          |
+| description                     | string     |          |
+| experiences_offered             | string     |          |
+| neighborhood_overview           | string     |          |
+| notes                           | string     |          |
+| transit                         | string     |          |
+| access                          | string     |          |
+| interaction                     | string     |          |
+| house_rules                     | string     |          |
+| thumbnail_url                   | string     |          |
+| medium_url                      | string     |          |
+| picture_url                     | string     |          |
+| xl_picture_url                  | string     |          |
+| host_id                         | string     |          |
+| street                          | string     |          |
+| neighbourhood                   | string     |          |
+| neighbourhood_cleansed          | string     |          |
+| neighbourhood_group_cleansed    | string     |          |
+| city                            | string     |          |
+| state                           | string     |          |
+| zipcode                         | string     |          |
+| market                          | string     |          |
+| smart_location                  | string     |          |
+| country_code                    | string     |          |
+| country                         | string     |          |
+| latitude                        | string     |          |
+| longitude                       | string     |          |
+| geolocation                     | string     |          |
+| property_type                   | string     |          |
+| room_type                       | string     |          |
+| accommodates                    | string     |          |
+| bathrooms                       | string     |          |
+| bedrooms                        | string     |          |
+| beds                            | string     |          |
+| bed_type                        | string     |          |
+| amenities                       | string     |          |
+| square_feet                     | string     |          |
+| price                           | string     |          |
+| weekly_price                    | string     |          |
+| monthly_price                   | string     |          |
+| security_deposit                | string     |          |
+| cleaning_fee                    | string     |          |
+| guests_included                 | string     |          |
+| extra_people                    | string     |          |
+| minimum_nights                  | string     |          |
+| maximum_nights                  | string     |          |
+| calendar_updated                | string     |          |
+| has_availability                | string     |          |
+| availability_30                 | string     |          |
+| availability_60                 | string     |          |
+| availability_90                 | string     |          |
+| availability_365                | string     |          |
+| calendar_last_scraped           | bigint     |          |
+| number_of_reviews               | string     |          |
+| first_review                    | bigint     |          |
+| last_review                     | bigint     |          |
+| license                         | string     |          |
+| jurisdiction_names              | string     |          |
+| cancellation_policy             | string     |          |
+| calculated_host_listings_count  | string     |          |
+| reviews_per_month               | string     |          |
++---------------------------------+------------+----------+
+67 rows selected (0.074 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DESCRIBE review_scores;
+INFO  : Compiling command(queryId=hive_20250428142926_c64892a1-3689-4487-a764-1f9c5850a6f3): DESCRIBE review_scores
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:col_name, type:string, comment:from deserializer), FieldSchema(name:data_type, type:string, comment:from deserializer), FieldSchema(name:comment, type:string, comment:from deserializer)], properties:null)
+INFO  : EXPLAIN output for queryid hive_20250428142926_c64892a1-3689-4487-a764-1f9c5850a6f3 : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [DDL]
+  Stage-1 depends on stages: Stage-0 [FETCH]
+
+STAGE PLANS:
+  Stage: Stage-0
+      Describe Table Operator:
+        Describe Table
+          result file: file:/tmp/hive/be01e452-f493-4d6b-aa0e-770c442afa98/hive_2025-04-28_14-29-26_765_5001532822386818506-73/-local-10000
+          table: review_scores
+
+  Stage: Stage-1
+    Fetch Operator
+      limit: -1
+      Processor Tree:
+        ListSink
+
+
+INFO  : Completed compiling command(queryId=hive_20250428142926_c64892a1-3689-4487-a764-1f9c5850a6f3); Time taken: 0.032 seconds
+INFO  : Executing command(queryId=hive_20250428142926_c64892a1-3689-4487-a764-1f9c5850a6f3): DESCRIBE review_scores
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20250428142926_c64892a1-3689-4487-a764-1f9c5850a6f3); Time taken: 0.011 seconds
+INFO  : OK
++------------------------------+------------+----------+
+|           col_name           | data_type  | comment  |
++------------------------------+------------+----------+
+| listing_id                   | string     |          |
+| review_scores_rating         | string     |          |
+| review_scores_accuracy       | string     |          |
+| review_scores_cleanliness    | string     |          |
+| review_scores_checkin        | string     |          |
+| review_scores_communication  | string     |          |
+| review_scores_location       | string     |          |
+| review_scores_value          | string     |          |
++------------------------------+------------+----------+
+8 rows selected (0.068 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DESCRIBE listing_features;
+INFO  : Compiling command(queryId=hive_20250428142926_b236d1ac-f867-4924-a3bf-684a623284ee): DESCRIBE listing_features
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:col_name, type:string, comment:from deserializer), FieldSchema(name:data_type, type:string, comment:from deserializer), FieldSchema(name:comment, type:string, comment:from deserializer)], properties:null)
+INFO  : EXPLAIN output for queryid hive_20250428142926_b236d1ac-f867-4924-a3bf-684a623284ee : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [DDL]
+  Stage-1 depends on stages: Stage-0 [FETCH]
+
+STAGE PLANS:
+  Stage: Stage-0
+      Describe Table Operator:
+        Describe Table
+          result file: file:/tmp/hive/be01e452-f493-4d6b-aa0e-770c442afa98/hive_2025-04-28_14-29-26_840_744102811358412026-73/-local-10000
+          table: listing_features
+
+  Stage: Stage-1
+    Fetch Operator
+      limit: -1
+      Processor Tree:
+        ListSink
+
+
+INFO  : Completed compiling command(queryId=hive_20250428142926_b236d1ac-f867-4924-a3bf-684a623284ee); Time taken: 0.031 seconds
+INFO  : Executing command(queryId=hive_20250428142926_b236d1ac-f867-4924-a3bf-684a623284ee): DESCRIBE listing_features
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20250428142926_b236d1ac-f867-4924-a3bf-684a623284ee); Time taken: 0.012 seconds
+INFO  : OK
++----------------+------------+----------+
+|    col_name    | data_type  | comment  |
++----------------+------------+----------+
+| listing_id     | string     |          |
+| feature_name   | string     |          |
+| feature_value  | string     |          |
++----------------+------------+----------+
+3 rows selected (0.066 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> Closing: 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10001

@@ -1,0 +1,97 @@
+{
+  "type" : "record",
+  "name" : "hosts",
+  "doc" : "Sqoop import of hosts",
+  "fields" : [ {
+    "name" : "host_id",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_id",
+    "sqlType" : "2"
+  }, {
+    "name" : "host_url",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_url",
+    "sqlType" : "12"
+  }, {
+    "name" : "host_name",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_name",
+    "sqlType" : "12"
+  }, {
+    "name" : "host_since",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "host_since",
+    "sqlType" : "91"
+  }, {
+    "name" : "host_location",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_location",
+    "sqlType" : "12"
+  }, {
+    "name" : "host_about",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_about",
+    "sqlType" : "12"
+  }, {
+    "name" : "host_response_time",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_response_time",
+    "sqlType" : "12"
+  }, {
+    "name" : "host_response_rate",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_response_rate",
+    "sqlType" : "2"
+  }, {
+    "name" : "host_acceptance_rate",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_acceptance_rate",
+    "sqlType" : "12"
+  }, {
+    "name" : "host_thumbnail_url",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_thumbnail_url",
+    "sqlType" : "12"
+  }, {
+    "name" : "host_picture_url",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_picture_url",
+    "sqlType" : "12"
+  }, {
+    "name" : "host_neighbourhood",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_neighbourhood",
+    "sqlType" : "12"
+  }, {
+    "name" : "host_listings_count",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_listings_count",
+    "sqlType" : "2"
+  }, {
+    "name" : "host_total_listings_count",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_total_listings_count",
+    "sqlType" : "2"
+  }, {
+    "name" : "host_verifications",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "host_verifications",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "hosts"
+}
