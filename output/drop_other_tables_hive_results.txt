@@ -6,28 +6,28 @@ Connected to: Apache Hive (version 3.1.3)
 Driver: Hive JDBC (version 2.3.9)
 Transaction isolation: TRANSACTION_REPEATABLE_READ
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team19_projectdb;
-INFO  : Compiling command(queryId=hive_20250428143007_7dfe9412-d516-46ca-9cc9-5a9e0c04a9f0): USE team19_projectdb
+INFO  : Compiling command(queryId=hive_20250505013353_2e04947d-4aef-47fb-9d4e-143ee1a1653e): USE team19_projectdb
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250428143007_7dfe9412-d516-46ca-9cc9-5a9e0c04a9f0 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250505013353_2e04947d-4aef-47fb-9d4e-143ee1a1653e : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
   Stage: Stage-0
 
 
-INFO  : Completed compiling command(queryId=hive_20250428143007_7dfe9412-d516-46ca-9cc9-5a9e0c04a9f0); Time taken: 0.056 seconds
-INFO  : Executing command(queryId=hive_20250428143007_7dfe9412-d516-46ca-9cc9-5a9e0c04a9f0): USE team19_projectdb
+INFO  : Completed compiling command(queryId=hive_20250505013353_2e04947d-4aef-47fb-9d4e-143ee1a1653e); Time taken: 0.047 seconds
+INFO  : Executing command(queryId=hive_20250505013353_2e04947d-4aef-47fb-9d4e-143ee1a1653e): USE team19_projectdb
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250428143007_7dfe9412-d516-46ca-9cc9-5a9e0c04a9f0); Time taken: 0.007 seconds
+INFO  : Completed executing command(queryId=hive_20250505013353_2e04947d-4aef-47fb-9d4e-143ee1a1653e); Time taken: 0.007 seconds
 INFO  : OK
-No rows affected (0.115 seconds)
+No rows affected (0.114 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE hosts;
-INFO  : Compiling command(queryId=hive_20250428143007_e99df4b8-f3db-4ed9-a758-31e6b4d3c7b3): DROP TABLE hosts
+INFO  : Compiling command(queryId=hive_20250505013353_a1a2e318-3344-48a2-9453-67e49ea62224): DROP TABLE hosts
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250428143007_e99df4b8-f3db-4ed9-a758-31e6b4d3c7b3 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250505013353_a1a2e318-3344-48a2-9453-67e49ea62224 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
@@ -37,17 +37,17 @@ STAGE PLANS:
           table: hosts
 
 
-INFO  : Completed compiling command(queryId=hive_20250428143007_e99df4b8-f3db-4ed9-a758-31e6b4d3c7b3); Time taken: 0.034 seconds
-INFO  : Executing command(queryId=hive_20250428143007_e99df4b8-f3db-4ed9-a758-31e6b4d3c7b3): DROP TABLE hosts
+INFO  : Completed compiling command(queryId=hive_20250505013353_a1a2e318-3344-48a2-9453-67e49ea62224); Time taken: 0.033 seconds
+INFO  : Executing command(queryId=hive_20250505013353_a1a2e318-3344-48a2-9453-67e49ea62224): DROP TABLE hosts
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250428143007_e99df4b8-f3db-4ed9-a758-31e6b4d3c7b3); Time taken: 0.044 seconds
+INFO  : Completed executing command(queryId=hive_20250505013353_a1a2e318-3344-48a2-9453-67e49ea62224); Time taken: 0.046 seconds
 INFO  : OK
-No rows affected (0.1 seconds)
+No rows affected (0.102 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE listings;
-INFO  : Compiling command(queryId=hive_20250428143007_71dae9e9-33b4-486f-af46-5aa63006bc84): DROP TABLE listings
+INFO  : Compiling command(queryId=hive_20250505013353_fc42c2a2-9174-4547-9b6c-d103559e87e5): DROP TABLE listings
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250428143007_71dae9e9-33b4-486f-af46-5aa63006bc84 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250505013353_fc42c2a2-9174-4547-9b6c-d103559e87e5 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
@@ -57,17 +57,17 @@ STAGE PLANS:
           table: listings
 
 
-INFO  : Completed compiling command(queryId=hive_20250428143007_71dae9e9-33b4-486f-af46-5aa63006bc84); Time taken: 0.032 seconds
-INFO  : Executing command(queryId=hive_20250428143007_71dae9e9-33b4-486f-af46-5aa63006bc84): DROP TABLE listings
+INFO  : Completed compiling command(queryId=hive_20250505013353_fc42c2a2-9174-4547-9b6c-d103559e87e5); Time taken: 0.031 seconds
+INFO  : Executing command(queryId=hive_20250505013353_fc42c2a2-9174-4547-9b6c-d103559e87e5): DROP TABLE listings
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250428143007_71dae9e9-33b4-486f-af46-5aa63006bc84); Time taken: 0.049 seconds
+INFO  : Completed executing command(queryId=hive_20250505013353_fc42c2a2-9174-4547-9b6c-d103559e87e5); Time taken: 0.041 seconds
 INFO  : OK
-No rows affected (0.1 seconds)
+No rows affected (0.09 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE review_scores;
-INFO  : Compiling command(queryId=hive_20250428143007_b8b8c661-d24b-4123-88ac-dda1bcea46fd): DROP TABLE review_scores
+INFO  : Compiling command(queryId=hive_20250505013353_f5023b91-f286-4559-8efc-6b540493149e): DROP TABLE review_scores
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250428143007_b8b8c661-d24b-4123-88ac-dda1bcea46fd : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250505013353_f5023b91-f286-4559-8efc-6b540493149e : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
@@ -77,17 +77,17 @@ STAGE PLANS:
           table: review_scores
 
 
-INFO  : Completed compiling command(queryId=hive_20250428143007_b8b8c661-d24b-4123-88ac-dda1bcea46fd); Time taken: 0.033 seconds
-INFO  : Executing command(queryId=hive_20250428143007_b8b8c661-d24b-4123-88ac-dda1bcea46fd): DROP TABLE review_scores
+INFO  : Completed compiling command(queryId=hive_20250505013353_f5023b91-f286-4559-8efc-6b540493149e); Time taken: 0.032 seconds
+INFO  : Executing command(queryId=hive_20250505013353_f5023b91-f286-4559-8efc-6b540493149e): DROP TABLE review_scores
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250428143007_b8b8c661-d24b-4123-88ac-dda1bcea46fd); Time taken: 0.038 seconds
+INFO  : Completed executing command(queryId=hive_20250505013353_f5023b91-f286-4559-8efc-6b540493149e); Time taken: 0.038 seconds
 INFO  : OK
-No rows affected (0.09 seconds)
+No rows affected (0.086 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE listing_features;
-INFO  : Compiling command(queryId=hive_20250428143007_9ad7ac3b-6858-4b98-bfce-018367d389a1): DROP TABLE listing_features
+INFO  : Compiling command(queryId=hive_20250505013353_d69b9696-8dd6-4fd2-ac03-fb2bab0a02b5): DROP TABLE listing_features
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250428143007_9ad7ac3b-6858-4b98-bfce-018367d389a1 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250505013353_d69b9696-8dd6-4fd2-ac03-fb2bab0a02b5 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
@@ -97,10 +97,10 @@ STAGE PLANS:
           table: listing_features
 
 
-INFO  : Completed compiling command(queryId=hive_20250428143007_9ad7ac3b-6858-4b98-bfce-018367d389a1); Time taken: 0.033 seconds
-INFO  : Executing command(queryId=hive_20250428143007_9ad7ac3b-6858-4b98-bfce-018367d389a1): DROP TABLE listing_features
+INFO  : Completed compiling command(queryId=hive_20250505013353_d69b9696-8dd6-4fd2-ac03-fb2bab0a02b5); Time taken: 0.031 seconds
+INFO  : Executing command(queryId=hive_20250505013353_d69b9696-8dd6-4fd2-ac03-fb2bab0a02b5): DROP TABLE listing_features
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250428143007_9ad7ac3b-6858-4b98-bfce-018367d389a1); Time taken: 0.043 seconds
+INFO  : Completed executing command(queryId=hive_20250505013353_d69b9696-8dd6-4fd2-ac03-fb2bab0a02b5); Time taken: 0.052 seconds
 INFO  : OK
-No rows affected (0.092 seconds)
+No rows affected (0.102 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> Closing: 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10001

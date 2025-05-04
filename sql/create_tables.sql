@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS listings (
     bed_type TEXT,
     amenities TEXT,
     square_feet DECIMAL(20, 7),
-    price TEXT,
+    price DECIMAL(20, 7),
     weekly_price TEXT,
     monthly_price TEXT,
     security_deposit TEXT,

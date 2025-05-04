@@ -2,7 +2,7 @@
 // WARNING: This class is AUTO-GENERATED. Modify at your own risk.
 //
 // Debug information:
-// Generated date: Wed Apr 23 17:46:20 MSK 2025
+// Generated date: Thu May 01 14:45:38 MSK 2025
 // For connector: org.apache.sqoop.manager.PostgresqlManager
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.Text;

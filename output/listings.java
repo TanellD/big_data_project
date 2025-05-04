@@ -2,7 +2,7 @@
 // WARNING: This class is AUTO-GENERATED. Modify at your own risk.
 //
 // Debug information:
-// Generated date: Wed Apr 23 17:45:18 MSK 2025
+// Generated date: Thu May 01 14:46:18 MSK 2025
 // For connector: org.apache.sqoop.manager.PostgresqlManager
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.Text;
@@ -301,7 +301,7 @@ public class listings extends SqoopRecord  implements DBWritable, Writable {
     setters.put("price", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
-        listings.this.price = (String)value;
+        listings.this.price = (java.math.BigDecimal)value;
       }
     });
     setters.put("weekly_price", new FieldSetterCommand() {
@@ -919,14 +919,14 @@ public class listings extends SqoopRecord  implements DBWritable, Writable {
     this.square_feet = square_feet;
     return this;
   }
-  private String price;
-  public String get_price() {
+  private java.math.BigDecimal price;
+  public java.math.BigDecimal get_price() {
     return price;
   }
-  public void set_price(String price) {
+  public void set_price(java.math.BigDecimal price) {
     this.price = price;
   }
-  public listings with_price(String price) {
+  public listings with_price(java.math.BigDecimal price) {
     this.price = price;
     return this;
   }
@@ -1384,7 +1384,7 @@ public class listings extends SqoopRecord  implements DBWritable, Writable {
     this.bed_type = JdbcWritableBridge.readString(41, __dbResults);
     this.amenities = JdbcWritableBridge.readString(42, __dbResults);
     this.square_feet = JdbcWritableBridge.readBigDecimal(43, __dbResults);
-    this.price = JdbcWritableBridge.readString(44, __dbResults);
+    this.price = JdbcWritableBridge.readBigDecimal(44, __dbResults);
     this.weekly_price = JdbcWritableBridge.readString(45, __dbResults);
     this.monthly_price = JdbcWritableBridge.readString(46, __dbResults);
     this.security_deposit = JdbcWritableBridge.readString(47, __dbResults);
@@ -1453,7 +1453,7 @@ public class listings extends SqoopRecord  implements DBWritable, Writable {
     this.bed_type = JdbcWritableBridge.readString(41, __dbResults);
     this.amenities = JdbcWritableBridge.readString(42, __dbResults);
     this.square_feet = JdbcWritableBridge.readBigDecimal(43, __dbResults);
-    this.price = JdbcWritableBridge.readString(44, __dbResults);
+    this.price = JdbcWritableBridge.readBigDecimal(44, __dbResults);
     this.weekly_price = JdbcWritableBridge.readString(45, __dbResults);
     this.monthly_price = JdbcWritableBridge.readString(46, __dbResults);
     this.security_deposit = JdbcWritableBridge.readString(47, __dbResults);
@@ -1532,7 +1532,7 @@ public class listings extends SqoopRecord  implements DBWritable, Writable {
     JdbcWritableBridge.writeString(bed_type, 41 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeString(amenities, 42 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeBigDecimal(square_feet, 43 + __off, 2, __dbStmt);
-    JdbcWritableBridge.writeString(price, 44 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeBigDecimal(price, 44 + __off, 2, __dbStmt);
     JdbcWritableBridge.writeString(weekly_price, 45 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeString(monthly_price, 46 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeString(security_deposit, 47 + __off, 12, __dbStmt);
@@ -1602,7 +1602,7 @@ public class listings extends SqoopRecord  implements DBWritable, Writable {
     JdbcWritableBridge.writeString(bed_type, 41 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeString(amenities, 42 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeBigDecimal(square_feet, 43 + __off, 2, __dbStmt);
-    JdbcWritableBridge.writeString(price, 44 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeBigDecimal(price, 44 + __off, 2, __dbStmt);
     JdbcWritableBridge.writeString(weekly_price, 45 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeString(monthly_price, 46 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeString(security_deposit, 47 + __off, 12, __dbStmt);
@@ -1848,7 +1848,7 @@ this.readFields0(__dataIn);  }
     if (__dataIn.readBoolean()) { 
         this.price = null;
     } else {
-    this.price = Text.readString(__dataIn);
+    this.price = org.apache.sqoop.lib.BigDecimalSerializer.readFields(__dataIn);
     }
     if (__dataIn.readBoolean()) { 
         this.weekly_price = null;
@@ -2229,7 +2229,7 @@ this.readFields0(__dataIn);  }
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    Text.writeString(__dataOut, price);
+    org.apache.sqoop.lib.BigDecimalSerializer.write(this.price, __dataOut);
     }
     if (null == this.weekly_price) { 
         __dataOut.writeBoolean(true);
@@ -2633,7 +2633,7 @@ this.readFields0(__dataIn);  }
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    Text.writeString(__dataOut, price);
+    org.apache.sqoop.lib.BigDecimalSerializer.write(this.price, __dataOut);
     }
     if (null == this.weekly_price) { 
         __dataOut.writeBoolean(true);
@@ -2873,7 +2873,7 @@ this.readFields0(__dataIn);  }
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(square_feet==null?"null":square_feet.toPlainString(), delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(price==null?"null":price, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(price==null?"null":price.toPlainString(), delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(weekly_price==null?"null":weekly_price, delimiters));
     __sb.append(fieldDelim);
@@ -3012,7 +3012,7 @@ this.readFields0(__dataIn);  }
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(square_feet==null?"null":square_feet.toPlainString(), delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(price==null?"null":price, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(price==null?"null":price.toPlainString(), delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(weekly_price==null?"null":weekly_price, delimiters));
     __sb.append(fieldDelim);
@@ -3506,8 +3506,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null")) { this.price = null; } else {
-      this.price = __cur_str;
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.price = null; } else {
+      this.price = new java.math.BigDecimal(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -4114,8 +4114,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null")) { this.price = null; } else {
-      this.price = __cur_str;
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.price = null; } else {
+      this.price = new java.math.BigDecimal(__cur_str);
     }
 
     if (__it.hasNext()) {

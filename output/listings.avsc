@@ -265,7 +265,7 @@
     "type" : [ "null", "string" ],
     "default" : null,
     "columnName" : "price",
-    "sqlType" : "12"
+    "sqlType" : "2"
   }, {
     "name" : "weekly_price",
     "type" : [ "null", "string" ],
