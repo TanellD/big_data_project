@@ -19,8 +19,8 @@ fi
 if [ ! -f "secrets/.psql.pass" ]; then
     echo "Please enter your PostgreSQL password:"
     read -s password
-    echo $password > secrets/pg_pass
-    chmod 600 secrets/pg_pass
+    echo $password > secrets/.psql.pass
+    chmod 600 secrets/.psql.pass
 fi
 
 # Make build_projectdb.py executable

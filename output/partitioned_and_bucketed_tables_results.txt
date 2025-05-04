@@ -6,34 +6,34 @@ Connected to: Apache Hive (version 3.1.3)
 Driver: Hive JDBC (version 2.3.9)
 Transaction isolation: TRANSACTION_REPEATABLE_READ
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team19_projectdb;
-INFO  : Compiling command(queryId=hive_20250505013318_abc64591-8182-44c8-8c4b-f3ea1686b269): USE team19_projectdb
+INFO  : Compiling command(queryId=hive_20250505023628_dd481eb6-e22c-4581-9f0a-d67a1987fd2d): USE team19_projectdb
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250505013318_abc64591-8182-44c8-8c4b-f3ea1686b269 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250505023628_dd481eb6-e22c-4581-9f0a-d67a1987fd2d : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
   Stage: Stage-0
 
 
-INFO  : Completed compiling command(queryId=hive_20250505013318_abc64591-8182-44c8-8c4b-f3ea1686b269); Time taken: 0.047 seconds
-INFO  : Executing command(queryId=hive_20250505013318_abc64591-8182-44c8-8c4b-f3ea1686b269): USE team19_projectdb
+INFO  : Completed compiling command(queryId=hive_20250505023628_dd481eb6-e22c-4581-9f0a-d67a1987fd2d); Time taken: 0.049 seconds
+INFO  : Executing command(queryId=hive_20250505023628_dd481eb6-e22c-4581-9f0a-d67a1987fd2d): USE team19_projectdb
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250505013318_abc64591-8182-44c8-8c4b-f3ea1686b269); Time taken: 0.006 seconds
+INFO  : Completed executing command(queryId=hive_20250505023628_dd481eb6-e22c-4581-9f0a-d67a1987fd2d); Time taken: 0.009 seconds
 INFO  : OK
-No rows affected (0.123 seconds)
+No rows affected (0.106 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.exec.max.dynamic.partitions=5000;
-No rows affected (0.004 seconds)
+No rows affected (0.003 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.exec.max.dynamic.partitions.pernode=1000;
 No rows affected (0.003 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.exec.dynamic.partition.mode=nonstrict;
-No rows affected (0.002 seconds)
+No rows affected (0.004 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE IF EXISTS listings_partitioned;
-INFO  : Compiling command(queryId=hive_20250505013319_b37e9e44-e549-4ac9-8aa9-8d4d09c18ba5): DROP TABLE IF EXISTS listings_partitioned
+INFO  : Compiling command(queryId=hive_20250505023628_b45fb330-219b-41f6-9b37-a3ff57589646): DROP TABLE IF EXISTS listings_partitioned
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250505013319_b37e9e44-e549-4ac9-8aa9-8d4d09c18ba5 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250505023628_b45fb330-219b-41f6-9b37-a3ff57589646 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
@@ -43,17 +43,17 @@ STAGE PLANS:
           table: listings_partitioned
 
 
-INFO  : Completed compiling command(queryId=hive_20250505013319_b37e9e44-e549-4ac9-8aa9-8d4d09c18ba5); Time taken: 0.027 seconds
-INFO  : Executing command(queryId=hive_20250505013319_b37e9e44-e549-4ac9-8aa9-8d4d09c18ba5): DROP TABLE IF EXISTS listings_partitioned
+INFO  : Completed compiling command(queryId=hive_20250505023628_b45fb330-219b-41f6-9b37-a3ff57589646); Time taken: 0.033 seconds
+INFO  : Executing command(queryId=hive_20250505023628_b45fb330-219b-41f6-9b37-a3ff57589646): DROP TABLE IF EXISTS listings_partitioned
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250505013319_b37e9e44-e549-4ac9-8aa9-8d4d09c18ba5); Time taken: 0.004 seconds
+INFO  : Completed executing command(queryId=hive_20250505023628_b45fb330-219b-41f6-9b37-a3ff57589646); Time taken: 0.01 seconds
 INFO  : OK
-No rows affected (0.049 seconds)
+No rows affected (0.062 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE IF EXISTS review_scores_bucketed;
-INFO  : Compiling command(queryId=hive_20250505013319_84907e0b-2c36-4ccf-bc6e-e1eceb6d9c1a): DROP TABLE IF EXISTS review_scores_bucketed
+INFO  : Compiling command(queryId=hive_20250505023628_9a573252-a49f-4fa0-9939-d0f0ec06d7f4): DROP TABLE IF EXISTS review_scores_bucketed
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250505013319_84907e0b-2c36-4ccf-bc6e-e1eceb6d9c1a : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250505023628_9a573252-a49f-4fa0-9939-d0f0ec06d7f4 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
@@ -63,12 +63,12 @@ STAGE PLANS:
           table: review_scores_bucketed
 
 
-INFO  : Completed compiling command(queryId=hive_20250505013319_84907e0b-2c36-4ccf-bc6e-e1eceb6d9c1a); Time taken: 0.024 seconds
-INFO  : Executing command(queryId=hive_20250505013319_84907e0b-2c36-4ccf-bc6e-e1eceb6d9c1a): DROP TABLE IF EXISTS review_scores_bucketed
+INFO  : Completed compiling command(queryId=hive_20250505023628_9a573252-a49f-4fa0-9939-d0f0ec06d7f4); Time taken: 0.038 seconds
+INFO  : Executing command(queryId=hive_20250505023628_9a573252-a49f-4fa0-9939-d0f0ec06d7f4): DROP TABLE IF EXISTS review_scores_bucketed
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250505013319_84907e0b-2c36-4ccf-bc6e-e1eceb6d9c1a); Time taken: 0.003 seconds
+INFO  : Completed executing command(queryId=hive_20250505023628_9a573252-a49f-4fa0-9939-d0f0ec06d7f4); Time taken: 0.007 seconds
 INFO  : OK
-No rows affected (0.043 seconds)
+No rows affected (0.074 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- Create partitioned listings table with hashed partition columns
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE listings_partitioned (
@@ -97,7 +97,7 @@ No rows affected (0.043 seconds)
 . . . . . . . . . . . . . . . . . . . . . . .> PARTITIONED BY (country STRING)
 . . . . . . . . . . . . . . . . . . . . . . .> STORED AS AVRO
 . . . . . . . . . . . . . . . . . . . . . . .> LOCATION 'project/warehouse/listings_partitioned';
-INFO  : Compiling command(queryId=hive_20250505013319_b963150a-ce7b-4063-9209-1a4d54fedba2): CREATE EXTERNAL TABLE listings_partitioned (
+INFO  : Compiling command(queryId=hive_20250505023628_e490e153-4edf-451b-8107-2210b6968178): CREATE EXTERNAL TABLE listings_partitioned (
 id STRING,
 listing_url STRING,
 scrape_id STRING,
@@ -121,7 +121,7 @@ STORED AS AVRO
 LOCATION 'project/warehouse/listings_partitioned'
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250505013319_b963150a-ce7b-4063-9209-1a4d54fedba2 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250505023628_e490e153-4edf-451b-8107-2210b6968178 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
@@ -138,8 +138,8 @@ STAGE PLANS:
           isExternal: true
 
 
-INFO  : Completed compiling command(queryId=hive_20250505013319_b963150a-ce7b-4063-9209-1a4d54fedba2); Time taken: 0.029 seconds
-INFO  : Executing command(queryId=hive_20250505013319_b963150a-ce7b-4063-9209-1a4d54fedba2): CREATE EXTERNAL TABLE listings_partitioned (
+INFO  : Completed compiling command(queryId=hive_20250505023628_e490e153-4edf-451b-8107-2210b6968178); Time taken: 0.029 seconds
+INFO  : Executing command(queryId=hive_20250505023628_e490e153-4edf-451b-8107-2210b6968178): CREATE EXTERNAL TABLE listings_partitioned (
 id STRING,
 listing_url STRING,
 scrape_id STRING,
@@ -162,9 +162,9 @@ PARTITIONED BY (country STRING)
 STORED AS AVRO
 LOCATION 'project/warehouse/listings_partitioned'
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250505013319_b963150a-ce7b-4063-9209-1a4d54fedba2); Time taken: 0.032 seconds
+INFO  : Completed executing command(queryId=hive_20250505023628_e490e153-4edf-451b-8107-2210b6968178); Time taken: 0.033 seconds
 INFO  : OK
-No rows affected (0.093 seconds)
+No rows affected (0.098 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- Insert data into the partitioned table with hashed partition columns (rang e 0-1000)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> INSERT OVERWRITE TABLE listings_partitioned
@@ -190,7 +190,7 @@ No rows affected (0.093 seconds)
 . . . . . . . . . . . . . . . . . . . . . . .>   -- Make sure this is the very last column to match your partition definitio n
 . . . . . . . . . . . . . . . . . . . . . . .>   COALESCE(country, 'Unknown')
 . . . . . . . . . . . . . . . . . . . . . . .> FROM listings;
-INFO  : Compiling command(queryId=hive_20250505013319_6985c94b-db6b-4d75-8351-04882f5484ae): INSERT OVERWRITE TABLE listings_partitioned
+INFO  : Compiling command(queryId=hive_20250505023629_b9b3b7c9-2c9d-42ce-94d4-5cd857fa6165): INSERT OVERWRITE TABLE listings_partitioned
 PARTITION (country)
 SELECT
 id,
@@ -214,7 +214,7 @@ COALESCE(country, 'Unknown')
 FROM listings
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:_col0, type:string, comment:null), FieldSchema(name:_col1, type:string, comment:null), FieldSchema(name:_col2, type:string, comment:null), FieldSchema(name:_col3, type:date, comment:null), FieldSchema(name:_col4, type:string, comment:null), FieldSchema(name:_col5, type:decimal(20,7), comment:null), FieldSchema(name:_col6, type:string, comment:null), FieldSchema(name:_col7, type:string, comment:null), FieldSchema(name:_col8, type:string, comment:null), FieldSchema(name:_col9, type:decimal(20,7), comment:null), FieldSchema(name:_col10, type:decimal(20,7), comment:null), FieldSchema(name:_col11, type:decimal(20,7), comment:null), FieldSchema(name:_col12, type:decimal(20,7), comment:null), FieldSchema(name:_col13, type:string, comment:null), FieldSchema(name:_col14, type:decimal(20,7), comment:null), FieldSchema(name:_col15, type:decimal(20,7), comment:null), FieldSchema(name:_col16, type:string, comment:null), FieldSchema(name:_col17, type:string, comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20250505013319_6985c94b-db6b-4d75-8351-04882f5484ae : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250505023629_b9b3b7c9-2c9d-42ce-94d4-5cd857fa6165 : STAGE DEPENDENCIES:
   Stage-1 is a root stage [MAPRED]
   Stage-2 depends on stages: Stage-1 [DEPENDENCY_COLLECTION]
   Stage-0 depends on stages: Stage-2 [MOVE]
@@ -223,8 +223,8 @@ INFO  : EXPLAIN output for queryid hive_20250505013319_6985c94b-db6b-4d75-8351-0
 STAGE PLANS:
   Stage: Stage-1
     Tez
-      DagId: hive_20250505013319_6985c94b-db6b-4d75-8351-04882f5484ae:2120
-      DagName: hive_20250505013319_6985c94b-db6b-4d75-8351-04882f5484ae:2120
+      DagId: hive_20250505023629_b9b3b7c9-2c9d-42ce-94d4-5cd857fa6165:2158
+      DagName: hive_20250505023629_b9b3b7c9-2c9d-42ce-94d4-5cd857fa6165:2158
       Vertices:
         Map 1 
             Map Operator Tree:
@@ -239,10 +239,10 @@ STAGE PLANS:
                     File Output Operator
                       compressed: false
                       GlobalTableId: 1
-                      directory: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/listings_partitioned/.hive-staging_hive_2025-05-05_01-33-19_605_4948147188545809802-1820/-ext-10000
+                      directory: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/listings_partitioned/.hive-staging_hive_2025-05-05_02-36-29_181_2710657535672341467-1857/-ext-10000
                       NumFilesPerFileSink: 1
                       Statistics: Num rows: 559228 Data size: 3643934976 Basic stats: COMPLETE Column stats: NONE
-                      Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/listings_partitioned/.hive-staging_hive_2025-05-05_01-33-19_605_4948147188545809802-1820/-ext-10000/
+                      Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/listings_partitioned/.hive-staging_hive_2025-05-05_02-36-29_181_2710657535672341467-1857/-ext-10000/
                       table:
                           input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
                           output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
@@ -264,7 +264,7 @@ STAGE PLANS:
                             serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                             serialization.format 1
                             serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                            transient_lastDdlTime 1746397999
+                            transient_lastDdlTime 1746401788
                           serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                           name: team19_projectdb.listings_partitioned
                       TotalFiles: 1
@@ -297,14 +297,14 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 364393518
-                    transient_lastDdlTime 1746397962
+                    transient_lastDdlTime 1746401752
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
                     output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
                     properties:
                       EXTERNAL TRUE
-                      avro.schema.literal {"type":"record","name":"listings","doc":"Sqoop import of listings","fields":[{"name":"id","type":["null","string"],"default":null,"columnName":"id","sqlType":"12"},{"name":"listing_url","type":["null","string"],"default":null,"columnName":"listing_url","sqlType":"12"},{"name":"scrape_id","type":["null","string"],"default":null,"columnName":"scrape_id","sqlType":"12"},{"name":"last_scraped","type":["null","long"],"default":null,"columnName":"last_scraped","sqlType":"91"},{"name":"name","type":["null","string"],"default":null,"columnName":"name","sqlType":"12"},{"name":"summary","type":["null","string"],"default":null,"columnName":"summary","sqlType":"12"},{"name":"space","type":["null","string"],"default":null,"columnName":"space","sqlType":"12"},{"name":"description","type":["null","string"],"default":null,"columnName":"description","sqlType":"12"},{"name":"experiences_offered","type":["null","string"],"default":null,"columnName":"experiences_offered","sqlType":"12"},{"name":"neighborhood_overview","type":["null","string"],"default":null,"columnName":"neighborhood_overview","sqlType":"12"},{"name":"notes","type":["null","string"],"default":null,"columnName":"notes","sqlType":"12"},{"name":"transit","type":["null","string"],"default":null,"columnName":"transit","sqlType":"12"},{"name":"access","type":["null","string"],"default":null,"columnName":"access","sqlType":"12"},{"name":"interaction","type":["null","string"],"default":null,"columnName":"interaction","sqlType":"12"},{"name":"house_rules","type":["null","string"],"default":null,"columnName":"house_rules","sqlType":"12"},{"name":"thumbnail_url","type":["null","string"],"default":null,"columnName":"thumbnail_url","sqlType":"12"},{"name":"medium_url","type":["null","string"],"default":null,"columnName":"medium_url","sqlType":"12"},{"name":"picture_url","type":["null","string"],"default":null,"columnName":"picture_url","sqlType":"12"},{"name":"xl_picture_url","type":["null","string"],"default":null,"columnName":"xl_picture_url","sqlType":"12"},{"name":"host_id","type":["null","string"],"default":null,"columnName":"host_id","sqlType":"2"},{"name":"street","type":["null","string"],"default":null,"columnName":"street","sqlType":"12"},{"name":"neighbourhood","type":["null","string"],"default":null,"columnName":"neighbourhood","sqlType":"12"},{"name":"neighbourhood_cleansed","type":["null","string"],"default":null,"columnName":"neighbourhood_cleansed","sqlType":"12"},{"name":"neighbourhood_group_cleansed","type":["null","string"],"default":null,"columnName":"neighbourhood_group_cleansed","sqlType":"12"},{"name":"city","type":["null","string"],"default":null,"columnName":"city","sqlType":"12"},{"name":"state","type":["null","string"],"default":null,"columnName":"state","sqlType":"12"},{"name":"zipcode","type":["null","string"],"default":null,"columnName":"zipcode","sqlType":"12"},{"name":"market","type":["null","string"],"default":null,"columnName":"market","sqlType":"12"},{"name":"smart_location","type":["null","string"],"default":null,"columnName":"smart_location","sqlType":"12"},{"name":"country_code","type":["null","string"],"default":null,"columnName":"country_code","sqlType":"12"},{"name":"country","type":["null","string"],"default":null,"columnName":"country","sqlType":"12"},{"name":"latitude","type":["null","string"],"default":null,"columnName":"latitude","sqlType":"2"},{"name":"longitude","type":["null","string"],"default":null,"columnName":"longitude","sqlType":"2"},{"name":"geolocation","type":["null","string"],"default":null,"columnName":"geolocation","sqlType":"12"},{"name":"property_type","type":["null","string"],"default":null,"columnName":"property_type","sqlType":"12"},{"name":"room_type","type":["null","string"],"default":null,"columnName":"room_type","sqlType":"12"},{"name":"accommodates","type":["null","string"],"default":null,"columnName":"accommodates","sqlType":"2"},{"name":"bathrooms","type":["null","string"],"default":null,"columnName":"bathrooms","sqlType":"2"},{"name":"bedrooms","type":["null","string"],"default":null,"columnName":"bedrooms","sqlType":"2"},{"name":"beds","type":["null","string"],"default":null,"columnName":"beds","sqlType":"2"},{"name":"bed_type","type":["null","string"],"default":null,"columnName":"bed_type","sqlType":"12"},{"name":"amenities","type":["null","string"],"default":null,"columnName":"amenities","sqlType":"12"},{"name":"square_feet","type":["null","string"],"default":null,"columnName":"square_feet","sqlType":"2"},{"name":"price","type":["null","string"],"default":null,"columnName":"price","sqlType":"12"},{"name":"weekly_price","type":["null","string"],"default":null,"columnName":"weekly_price","sqlType":"12"},{"name":"monthly_price","type":["null","string"],"default":null,"columnName":"monthly_price","sqlType":"12"},{"name":"security_deposit","type":["null","string"],"default":null,"columnName":"security_deposit","sqlType":"12"},{"name":"cleaning_fee","type":["null","string"],"default":null,"columnName":"cleaning_fee","sqlType":"12"},{"name":"guests_included","type":["null","string"],"default":null,"columnName":"guests_included","sqlType":"2"},{"name":"extra_people","type":["null","string"],"default":null,"columnName":"extra_people","sqlType":"12"},{"name":"minimum_nights","type":["null","string"],"default":null,"columnName":"minimum_nights","sqlType":"2"},{"name":"maximum_nights","type":["null","string"],"default":null,"columnName":"maximum_nights","sqlType":"2"},{"name":"calendar_updated","type":["null","string"],"default":null,"columnName":"calendar_updated","sqlType":"12"},{"name":"has_availability","type":["null","string"],"default":null,"columnName":"has_availability","sqlType":"12"},{"name":"availability_30","type":["null","string"],"default":null,"columnName":"availability_30","sqlType":"2"},{"name":"availability_60","type":["null","string"],"default":null,"columnName":"availability_60","sqlType":"2"},{"name":"availability_90","type":["null","string"],"default":null,"columnName":"availability_90","sqlType":"2"},{"name":"availability_365","type":["null","string"],"default":null,"columnName":"availability_365","sqlType":"2"},{"name":"calendar_last_scraped","type":["null","long"],"default":null,"columnName":"calendar_last_scraped","sqlType":"91"},{"name":"number_of_reviews","type":["null","string"],"default":null,"columnName":"number_of_reviews","sqlType":"2"},{"name":"first_review","type":["null","long"],"default":null,"columnName":"first_review","sqlType":"91"},{"name":"last_review","type":["null","long"],"default":null,"columnName":"last_review","sqlType":"91"},{"name":"license","type":["null","string"],"default":null,"columnName":"license","sqlType":"12"},{"name":"jurisdiction_names","type":["null","string"],"default":null,"columnName":"jurisdiction_names","sqlType":"12"},{"name":"cancellation_policy","type":["null","string"],"default":null,"columnName":"cancellation_policy","sqlType":"12"},{"name":"calculated_host_listings_count","type":["null","string"],"default":null,"columnName":"calculated_host_listings_count","sqlType":"2"},{"name":"reviews_per_month","type":["null","string"],"default":null,"columnName":"reviews_per_month","sqlType":"2"}],"tableName":"listings"}
+                      avro.schema.literal {"type":"record","name":"listings","doc":"Sqoop import of listings","fields":[{"name":"id","type":["null","string"],"default":null,"columnName":"id","sqlType":"12"},{"name":"listing_url","type":["null","string"],"default":null,"columnName":"listing_url","sqlType":"12"},{"name":"scrape_id","type":["null","string"],"default":null,"columnName":"scrape_id","sqlType":"12"},{"name":"last_scraped","type":["null","long"],"default":null,"columnName":"last_scraped","sqlType":"91"},{"name":"name","type":["null","string"],"default":null,"columnName":"name","sqlType":"12"},{"name":"summary","type":["null","string"],"default":null,"columnName":"summary","sqlType":"12"},{"name":"space","type":["null","string"],"default":null,"columnName":"space","sqlType":"12"},{"name":"description","type":["null","string"],"default":null,"columnName":"description","sqlType":"12"},{"name":"experiences_offered","type":["null","string"],"default":null,"columnName":"experiences_offered","sqlType":"12"},{"name":"neighborhood_overview","type":["null","string"],"default":null,"columnName":"neighborhood_overview","sqlType":"12"},{"name":"notes","type":["null","string"],"default":null,"columnName":"notes","sqlType":"12"},{"name":"transit","type":["null","string"],"default":null,"columnName":"transit","sqlType":"12"},{"name":"access","type":["null","string"],"default":null,"columnName":"access","sqlType":"12"},{"name":"interaction","type":["null","string"],"default":null,"columnName":"interaction","sqlType":"12"},{"name":"house_rules","type":["null","string"],"default":null,"columnName":"house_rules","sqlType":"12"},{"name":"thumbnail_url","type":["null","string"],"default":null,"columnName":"thumbnail_url","sqlType":"12"},{"name":"medium_url","type":["null","string"],"default":null,"columnName":"medium_url","sqlType":"12"},{"name":"picture_url","type":["null","string"],"default":null,"columnName":"picture_url","sqlType":"12"},{"name":"xl_picture_url","type":["null","string"],"default":null,"columnName":"xl_picture_url","sqlType":"12"},{"name":"host_id","type":["null","string"],"default":null,"columnName":"host_id","sqlType":"2"},{"name":"street","type":["null","string"],"default":null,"columnName":"street","sqlType":"12"},{"name":"neighbourhood","type":["null","string"],"default":null,"columnName":"neighbourhood","sqlType":"12"},{"name":"neighbourhood_cleansed","type":["null","string"],"default":null,"columnName":"neighbourhood_cleansed","sqlType":"12"},{"name":"neighbourhood_group_cleansed","type":["null","string"],"default":null,"columnName":"neighbourhood_group_cleansed","sqlType":"12"},{"name":"city","type":["null","string"],"default":null,"columnName":"city","sqlType":"12"},{"name":"state","type":["null","string"],"default":null,"columnName":"state","sqlType":"12"},{"name":"zipcode","type":["null","string"],"default":null,"columnName":"zipcode","sqlType":"12"},{"name":"market","type":["null","string"],"default":null,"columnName":"market","sqlType":"12"},{"name":"smart_location","type":["null","string"],"default":null,"columnName":"smart_location","sqlType":"12"},{"name":"country_code","type":["null","string"],"default":null,"columnName":"country_code","sqlType":"12"},{"name":"country","type":["null","string"],"default":null,"columnName":"country","sqlType":"12"},{"name":"latitude","type":["null","string"],"default":null,"columnName":"latitude","sqlType":"2"},{"name":"longitude","type":["null","string"],"default":null,"columnName":"longitude","sqlType":"2"},{"name":"geolocation","type":["null","string"],"default":null,"columnName":"geolocation","sqlType":"12"},{"name":"property_type","type":["null","string"],"default":null,"columnName":"property_type","sqlType":"12"},{"name":"room_type","type":["null","string"],"default":null,"columnName":"room_type","sqlType":"12"},{"name":"accommodates","type":["null","string"],"default":null,"columnName":"accommodates","sqlType":"2"},{"name":"bathrooms","type":["null","string"],"default":null,"columnName":"bathrooms","sqlType":"2"},{"name":"bedrooms","type":["null","string"],"default":null,"columnName":"bedrooms","sqlType":"2"},{"name":"beds","type":["null","string"],"default":null,"columnName":"beds","sqlType":"2"},{"name":"bed_type","type":["null","string"],"default":null,"columnName":"bed_type","sqlType":"12"},{"name":"amenities","type":["null","string"],"default":null,"columnName":"amenities","sqlType":"12"},{"name":"square_feet","type":["null","string"],"default":null,"columnName":"square_feet","sqlType":"2"},{"name":"price","type":["null","string"],"default":null,"columnName":"price","sqlType":"2"},{"name":"weekly_price","type":["null","string"],"default":null,"columnName":"weekly_price","sqlType":"12"},{"name":"monthly_price","type":["null","string"],"default":null,"columnName":"monthly_price","sqlType":"12"},{"name":"security_deposit","type":["null","string"],"default":null,"columnName":"security_deposit","sqlType":"12"},{"name":"cleaning_fee","type":["null","string"],"default":null,"columnName":"cleaning_fee","sqlType":"12"},{"name":"guests_included","type":["null","string"],"default":null,"columnName":"guests_included","sqlType":"2"},{"name":"extra_people","type":["null","string"],"default":null,"columnName":"extra_people","sqlType":"12"},{"name":"minimum_nights","type":["null","string"],"default":null,"columnName":"minimum_nights","sqlType":"2"},{"name":"maximum_nights","type":["null","string"],"default":null,"columnName":"maximum_nights","sqlType":"2"},{"name":"calendar_updated","type":["null","string"],"default":null,"columnName":"calendar_updated","sqlType":"12"},{"name":"has_availability","type":["null","string"],"default":null,"columnName":"has_availability","sqlType":"12"},{"name":"availability_30","type":["null","string"],"default":null,"columnName":"availability_30","sqlType":"2"},{"name":"availability_60","type":["null","string"],"default":null,"columnName":"availability_60","sqlType":"2"},{"name":"availability_90","type":["null","string"],"default":null,"columnName":"availability_90","sqlType":"2"},{"name":"availability_365","type":["null","string"],"default":null,"columnName":"availability_365","sqlType":"2"},{"name":"calendar_last_scraped","type":["null","long"],"default":null,"columnName":"calendar_last_scraped","sqlType":"91"},{"name":"number_of_reviews","type":["null","string"],"default":null,"columnName":"number_of_reviews","sqlType":"2"},{"name":"first_review","type":["null","long"],"default":null,"columnName":"first_review","sqlType":"91"},{"name":"last_review","type":["null","long"],"default":null,"columnName":"last_review","sqlType":"91"},{"name":"license","type":["null","string"],"default":null,"columnName":"license","sqlType":"12"},{"name":"jurisdiction_names","type":["null","string"],"default":null,"columnName":"jurisdiction_names","sqlType":"12"},{"name":"cancellation_policy","type":["null","string"],"default":null,"columnName":"cancellation_policy","sqlType":"12"},{"name":"calculated_host_listings_count","type":["null","string"],"default":null,"columnName":"calculated_host_listings_count","sqlType":"2"},{"name":"reviews_per_month","type":["null","string"],"default":null,"columnName":"reviews_per_month","sqlType":"2"}],"tableName":"listings"}
                       avro.schema.url project/warehouse/avsc/listings.avsc
                       bucket_count -1
                       bucketing_version 2
@@ -321,7 +321,7 @@ STAGE PLANS:
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                       totalSize 364393518
-                      transient_lastDdlTime 1746397962
+                      transient_lastDdlTime 1746401752
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings
                   name: team19_projectdb.listings
@@ -337,7 +337,7 @@ STAGE PLANS:
           partition:
             country 
           replace: true
-          source: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/listings_partitioned/.hive-staging_hive_2025-05-05_01-33-19_605_4948147188545809802-1820/-ext-10000
+          source: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/listings_partitioned/.hive-staging_hive_2025-05-05_02-36-29_181_2710657535672341467-1857/-ext-10000
           table:
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
               output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
@@ -359,18 +359,18 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746397999
+                transient_lastDdlTime 1746401788
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
 
   Stage: Stage-3
     Stats Work
       Basic Stats Work:
-          Stats Aggregation Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/listings_partitioned/.hive-staging_hive_2025-05-05_01-33-19_605_4948147188545809802-1820/-ext-10000/
+          Stats Aggregation Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/listings_partitioned/.hive-staging_hive_2025-05-05_02-36-29_181_2710657535672341467-1857/-ext-10000/
 
 
-INFO  : Completed compiling command(queryId=hive_20250505013319_6985c94b-db6b-4d75-8351-04882f5484ae); Time taken: 0.189 seconds
-INFO  : Executing command(queryId=hive_20250505013319_6985c94b-db6b-4d75-8351-04882f5484ae): INSERT OVERWRITE TABLE listings_partitioned
+INFO  : Completed compiling command(queryId=hive_20250505023629_b9b3b7c9-2c9d-42ce-94d4-5cd857fa6165); Time taken: 0.196 seconds
+INFO  : Executing command(queryId=hive_20250505023629_b9b3b7c9-2c9d-42ce-94d4-5cd857fa6165): INSERT OVERWRITE TABLE listings_partitioned
 PARTITION (country)
 SELECT
 id,
@@ -392,131 +392,173 @@ reviews_per_month,
 city,
 COALESCE(country, 'Unknown')
 FROM listings
-INFO  : Query ID = hive_20250505013319_6985c94b-db6b-4d75-8351-04882f5484ae
+INFO  : Query ID = hive_20250505023629_b9b3b7c9-2c9d-42ce-94d4-5cd857fa6165
 INFO  : Total jobs = 1
 INFO  : Launching Job 1 out of 1
 INFO  : Starting task [Stage-1:MAPRED] in serial mode
-INFO  : Subscribed to counters: [] for queryId: hive_20250505013319_6985c94b-db6b-4d75-8351-04882f5484ae
+INFO  : Subscribed to counters: [] for queryId: hive_20250505023629_b9b3b7c9-2c9d-42ce-94d4-5cd857fa6165
 INFO  : Tez session hasn't been created yet. Opening session
 INFO  : Dag name: INSERT OVERWRITE TABLE listings_p...listings (Stage-1)
-INFO  : Status: Running (Executing on YARN cluster with App id application_1745788519616_2093)
+INFO  : Status: Running (Executing on YARN cluster with App id application_1745788519616_2142)
 
 [2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1            container        INITED      7          0        0        7       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 1.21 s     
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 4.63 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [7A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1            container        INITED      7          0        0        7       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 1.71 s     
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 5.14 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [7A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1            container        INITED      7          0        0        7       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 2.21 s     
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 5.64 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [7A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      7          0        6        1       0       0  
+[2KMap 1            container        INITED      7          0        0        7       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 2.72 s     
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 6.64 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [7A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      7          0        6        1       0       0  
+[2KMap 1            container        INITED      7          0        0        7       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 3.22 s     
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 7.65 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[7A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      7          0        0        7       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 8.65 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[7A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      7          0        0        7       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 9.69 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[7A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      7          0        0        7       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 10.69 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[7A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      7          0        0        7       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 11.70 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[7A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      7          0        0        7       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 12.70 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[7A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      7          0        0        7       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 13.70 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[7A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      7          0        0        7       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 14.71 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[7A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      7          0        0        7       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 15.71 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[7A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      7          0        0        7       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 17.21 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[7A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      7          0        0        7       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 18.71 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[7A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING      7          0        1        6       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 20.22 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[7A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING      7          0        1        6       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 21.72 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [7A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1            container       RUNNING      7          0        7        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 3.72 s     
+[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 23.22 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [7A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      7          0        7        0       0       0  
+[2KMap 1 .          container       RUNNING      7          1        6        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 4.22 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[7A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      7          0        7        0       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 4.73 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[7A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      7          0        7        0       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 5.23 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[7A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      7          0        7        0       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 5.73 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[7A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      7          0        7        0       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 6.24 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[7A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      7          0        7        0       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/01  [>>--------------------------] 0%    ELAPSED TIME: 7.24 s     
+[2K[31;1mVERTICES: 00/01  [===>>-----------------------] 14%   ELAPSED TIME: 24.72 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [7A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 ..         container       RUNNING      7          2        5        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/01  [=======>>-------------------] 28%   ELAPSED TIME: 8.24 s     
+[2K[31;1mVERTICES: 00/01  [=======>>-------------------] 28%   ELAPSED TIME: 26.22 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [7A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      7          7        0        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/01  [==========================>>] 100%  ELAPSED TIME: 9.24 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[7A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1 .......... container     SUCCEEDED      7          7        0        0       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/01  [==========================>>] 100%  ELAPSED TIME: 9.80 s     
+[2K[31;1mVERTICES: 01/01  [==========================>>] 100%  ELAPSED TIME: 28.14 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 INFO  : Starting task [Stage-2:DEPENDENCY_COLLECTION] in serial mode
 INFO  : Starting task [Stage-0:MOVE] in serial mode
-INFO  : Loading data to table team19_projectdb.listings_partitioned partition (country=null) from hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/listings_partitioned/.hive-staging_hive_2025-05-05_01-33-19_605_4948147188545809802-1820/-ext-10000
+INFO  : Loading data to table team19_projectdb.listings_partitioned partition (country=null) from hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/listings_partitioned/.hive-staging_hive_2025-05-05_02-36-29_181_2710657535672341467-1857/-ext-10000
 INFO  : 
 
-INFO  : 	 Time taken to load dynamic partitions: 0.723 seconds
+INFO  : 	 Time taken to load dynamic partitions: 0.805 seconds
 INFO  : 	 Time taken for adding to write entity : 0.002 seconds
 INFO  : Starting task [Stage-3:STATS] in serial mode
-INFO  : Completed executing command(queryId=hive_20250505013319_6985c94b-db6b-4d75-8351-04882f5484ae); Time taken: 13.686 seconds
+INFO  : Completed executing command(queryId=hive_20250505023629_b9b3b7c9-2c9d-42ce-94d4-5cd857fa6165); Time taken: 32.707 seconds
 INFO  : OK
-No rows affected (13.891 seconds)
+No rows affected (32.92 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- Create bucketed review scores table
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE review_scores_bucketed (
@@ -532,7 +574,7 @@ No rows affected (13.891 seconds)
 . . . . . . . . . . . . . . . . . . . . . . .> CLUSTERED BY (listing_id) INTO 4 BUCKETS
 . . . . . . . . . . . . . . . . . . . . . . .> STORED AS AVRO
 . . . . . . . . . . . . . . . . . . . . . . .> LOCATION 'project/warehouse/review_scores_bucketed';
-INFO  : Compiling command(queryId=hive_20250505013333_46fb3e3a-cc12-4f69-bdb6-4d0eb3d479b7): CREATE EXTERNAL TABLE review_scores_bucketed (
+INFO  : Compiling command(queryId=hive_20250505023702_8f122858-93e4-4450-abd0-49bbcb4b7c1d): CREATE EXTERNAL TABLE review_scores_bucketed (
 listing_id STRING,
 review_scores_rating DECIMAL(20,7),
 review_scores_accuracy DECIMAL(20,7),
@@ -547,7 +589,7 @@ STORED AS AVRO
 LOCATION 'project/warehouse/review_scores_bucketed'
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250505013333_46fb3e3a-cc12-4f69-bdb6-4d0eb3d479b7 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250505023702_8f122858-93e4-4450-abd0-49bbcb4b7c1d : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
@@ -565,8 +607,8 @@ STAGE PLANS:
           isExternal: true
 
 
-INFO  : Completed compiling command(queryId=hive_20250505013333_46fb3e3a-cc12-4f69-bdb6-4d0eb3d479b7); Time taken: 0.027 seconds
-INFO  : Executing command(queryId=hive_20250505013333_46fb3e3a-cc12-4f69-bdb6-4d0eb3d479b7): CREATE EXTERNAL TABLE review_scores_bucketed (
+INFO  : Completed compiling command(queryId=hive_20250505023702_8f122858-93e4-4450-abd0-49bbcb4b7c1d); Time taken: 0.03 seconds
+INFO  : Executing command(queryId=hive_20250505023702_8f122858-93e4-4450-abd0-49bbcb4b7c1d): CREATE EXTERNAL TABLE review_scores_bucketed (
 listing_id STRING,
 review_scores_rating DECIMAL(20,7),
 review_scores_accuracy DECIMAL(20,7),
@@ -580,9 +622,9 @@ CLUSTERED BY (listing_id) INTO 4 BUCKETS
 STORED AS AVRO
 LOCATION 'project/warehouse/review_scores_bucketed'
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250505013333_46fb3e3a-cc12-4f69-bdb6-4d0eb3d479b7); Time taken: 0.021 seconds
+INFO  : Completed executing command(queryId=hive_20250505023702_8f122858-93e4-4450-abd0-49bbcb4b7c1d); Time taken: 0.02 seconds
 INFO  : OK
-No rows affected (0.072 seconds)
+No rows affected (0.076 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- Enable bucketing in Hive
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.enforce.bucketing = true;
@@ -591,11 +633,11 @@ No rows affected (0.004 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- Insert data into the bucketed table
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> INSERT OVERWRITE TABLE review_scores_bucketed
 . . . . . . . . . . . . . . . . . . . . . . .> SELECT * FROM review_scores;
-INFO  : Compiling command(queryId=hive_20250505013333_cc406b78-025c-4368-a716-4ed16376822a): INSERT OVERWRITE TABLE review_scores_bucketed
+INFO  : Compiling command(queryId=hive_20250505023702_e0a2ce0c-de91-47a8-bc10-4781f439d47e): INSERT OVERWRITE TABLE review_scores_bucketed
 SELECT * FROM review_scores
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:_col0, type:string, comment:null), FieldSchema(name:_col1, type:decimal(20,7), comment:null), FieldSchema(name:_col2, type:decimal(20,7), comment:null), FieldSchema(name:_col3, type:decimal(20,7), comment:null), FieldSchema(name:_col4, type:decimal(20,7), comment:null), FieldSchema(name:_col5, type:decimal(20,7), comment:null), FieldSchema(name:_col6, type:decimal(20,7), comment:null), FieldSchema(name:_col7, type:decimal(20,7), comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20250505013333_cc406b78-025c-4368-a716-4ed16376822a : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250505023702_e0a2ce0c-de91-47a8-bc10-4781f439d47e : STAGE DEPENDENCIES:
   Stage-1 is a root stage [MAPRED]
   Stage-2 depends on stages: Stage-1 [DEPENDENCY_COLLECTION]
   Stage-0 depends on stages: Stage-2 [MOVE]
@@ -604,11 +646,11 @@ INFO  : EXPLAIN output for queryid hive_20250505013333_cc406b78-025c-4368-a716-4
 STAGE PLANS:
   Stage: Stage-1
     Tez
-      DagId: hive_20250505013333_cc406b78-025c-4368-a716-4ed16376822a:2121
+      DagId: hive_20250505023702_e0a2ce0c-de91-47a8-bc10-4781f439d47e:2160
       Edges:
         Reducer 2 <- Map 1 (CUSTOM_SIMPLE_EDGE)
         Reducer 3 <- Reducer 2 (CUSTOM_SIMPLE_EDGE)
-      DagName: hive_20250505013333_cc406b78-025c-4368-a716-4ed16376822a:2121
+      DagName: hive_20250505023702_e0a2ce0c-de91-47a8-bc10-4781f439d47e:2160
       Vertices:
         Map 1 
             Map Operator Tree:
@@ -655,7 +697,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 4218409
-                    transient_lastDdlTime 1746397962
+                    transient_lastDdlTime 1746401752
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -679,7 +721,7 @@ STAGE PLANS:
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                       totalSize 4218409
-                      transient_lastDdlTime 1746397962
+                      transient_lastDdlTime 1746401752
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.review_scores
                   name: team19_projectdb.review_scores
@@ -695,10 +737,10 @@ STAGE PLANS:
                 File Output Operator
                   compressed: false
                   GlobalTableId: 1
-                  directory: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/review_scores_bucketed/.hive-staging_hive_2025-05-05_01-33-33_747_4801954289958382125-1820/-ext-10000
+                  directory: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/review_scores_bucketed/.hive-staging_hive_2025-05-05_02-37-02_362_6872719791987891308-1857/-ext-10000
                   NumFilesPerFileSink: 1
                   Statistics: Num rows: 42870 Data size: 42184088 Basic stats: COMPLETE Column stats: NONE
-                  Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/review_scores_bucketed/.hive-staging_hive_2025-05-05_01-33-33_747_4801954289958382125-1820/-ext-10000/
+                  Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/review_scores_bucketed/.hive-staging_hive_2025-05-05_02-37-02_362_6872719791987891308-1857/-ext-10000/
                   table:
                       input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
                       output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
@@ -716,12 +758,10 @@ STAGE PLANS:
                         file.outputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
                         location hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/review_scores_bucketed
                         name team19_projectdb.review_scores_bucketed
-                        numFiles 4
                         serialization.ddl struct review_scores_bucketed { string listing_id, decimal(20,7) review_scores_rating, decimal(20,7) review_scores_accuracy, decimal(20,7) review_scores_cleanliness, decimal(20,7) review_scores_checkin, decimal(20,7) review_scores_communication, decimal(20,7) review_scores_location, decimal(20,7) review_scores_value}
                         serialization.format 1
                         serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                        totalSize 10487093
-                        transient_lastDdlTime 1746398013
+                        transient_lastDdlTime 1746401822
                       serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                       name: team19_projectdb.review_scores_bucketed
                   TotalFiles: 1
@@ -754,10 +794,10 @@ STAGE PLANS:
                 File Output Operator
                   compressed: false
                   GlobalTableId: 0
-                  directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team19/e40bc7d9-abab-49b1-9722-89e7c58225e8/hive_2025-05-05_01-33-33_917_6338950943498232327-1820/-mr-10000/.hive-staging_hive_2025-05-05_01-33-33_917_6338950943498232327-1820/-ext-10001
+                  directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team19/42a0c84b-7ef2-479c-895c-ec62f8cdc9b1/hive_2025-05-05_02-37-02_542_1411677074616595085-1857/-mr-10000/.hive-staging_hive_2025-05-05_02-37-02_542_1411677074616595085-1857/-ext-10001
                   NumFilesPerFileSink: 1
                   Statistics: Num rows: 1 Data size: 4976 Basic stats: COMPLETE Column stats: NONE
-                  Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team19/e40bc7d9-abab-49b1-9722-89e7c58225e8/hive_2025-05-05_01-33-33_917_6338950943498232327-1820/-mr-10000/.hive-staging_hive_2025-05-05_01-33-33_917_6338950943498232327-1820/-ext-10001/
+                  Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team19/42a0c84b-7ef2-479c-895c-ec62f8cdc9b1/hive_2025-05-05_02-37-02_542_1411677074616595085-1857/-mr-10000/.hive-staging_hive_2025-05-05_02-37-02_542_1411677074616595085-1857/-ext-10001/
                   table:
                       input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                       output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -781,7 +821,7 @@ STAGE PLANS:
     Move Operator
       tables:
           replace: true
-          source: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/review_scores_bucketed/.hive-staging_hive_2025-05-05_01-33-33_747_4801954289958382125-1820/-ext-10000
+          source: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/review_scores_bucketed/.hive-staging_hive_2025-05-05_02-37-02_362_6872719791987891308-1857/-ext-10000
           table:
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
               output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
@@ -799,19 +839,17 @@ STAGE PLANS:
                 file.outputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
                 location hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/review_scores_bucketed
                 name team19_projectdb.review_scores_bucketed
-                numFiles 4
                 serialization.ddl struct review_scores_bucketed { string listing_id, decimal(20,7) review_scores_rating, decimal(20,7) review_scores_accuracy, decimal(20,7) review_scores_cleanliness, decimal(20,7) review_scores_checkin, decimal(20,7) review_scores_communication, decimal(20,7) review_scores_location, decimal(20,7) review_scores_value}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                totalSize 10487093
-                transient_lastDdlTime 1746398013
+                transient_lastDdlTime 1746401822
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.review_scores_bucketed
 
   Stage: Stage-3
     Stats Work
       Basic Stats Work:
-          Stats Aggregation Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/review_scores_bucketed/.hive-staging_hive_2025-05-05_01-33-33_747_4801954289958382125-1820/-ext-10000/
+          Stats Aggregation Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/review_scores_bucketed/.hive-staging_hive_2025-05-05_02-37-02_362_6872719791987891308-1857/-ext-10000/
       Column Stats Desc:
           Columns: listing_id, review_scores_rating, review_scores_accuracy, review_scores_cleanliness, review_scores_checkin, review_scores_communication, review_scores_location, review_scores_value
           Column Types: string, decimal(20,7), decimal(20,7), decimal(20,7), decimal(20,7), decimal(20,7), decimal(20,7), decimal(20,7)
@@ -819,17 +857,17 @@ STAGE PLANS:
           Is Table Level Stats: true
 
 
-INFO  : Completed compiling command(queryId=hive_20250505013333_cc406b78-025c-4368-a716-4ed16376822a); Time taken: 0.215 seconds
-INFO  : Executing command(queryId=hive_20250505013333_cc406b78-025c-4368-a716-4ed16376822a): INSERT OVERWRITE TABLE review_scores_bucketed
+INFO  : Completed compiling command(queryId=hive_20250505023702_e0a2ce0c-de91-47a8-bc10-4781f439d47e); Time taken: 0.227 seconds
+INFO  : Executing command(queryId=hive_20250505023702_e0a2ce0c-de91-47a8-bc10-4781f439d47e): INSERT OVERWRITE TABLE review_scores_bucketed
 SELECT * FROM review_scores
-INFO  : Query ID = hive_20250505013333_cc406b78-025c-4368-a716-4ed16376822a
+INFO  : Query ID = hive_20250505023702_e0a2ce0c-de91-47a8-bc10-4781f439d47e
 INFO  : Total jobs = 1
 INFO  : Launching Job 1 out of 1
 INFO  : Starting task [Stage-1:MAPRED] in serial mode
-INFO  : Subscribed to counters: [] for queryId: hive_20250505013333_cc406b78-025c-4368-a716-4ed16376822a
+INFO  : Subscribed to counters: [] for queryId: hive_20250505023702_e0a2ce0c-de91-47a8-bc10-4781f439d47e
 INFO  : Session is already open
 INFO  : Dag name: INSERT OVERWRITE TABLE revie...review_scores (Stage-1)
-INFO  : Status: Running (Executing on YARN cluster with App id application_1745788519616_2093)
+INFO  : Status: Running (Executing on YARN cluster with App id application_1745788519616_2142)
 
 [2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -838,7 +876,7 @@ INFO  : Status: Running (Executing on YARN cluster with App id application_17457
 Reducer 2        container        INITED      4          0        0        4       0       0  
 Reducer 3        container        INITED      1          0        0        1       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 1.34 s     
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 1.35 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -847,7 +885,7 @@ Reducer 3        container        INITED      1          0        0        1    
 Reducer 2        container       RUNNING      4          0        4        0       0       0  
 Reducer 3        container        INITED      1          0        0        1       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/03  [====>>----------------------] 16%   ELAPSED TIME: 1.84 s     
+[2K[31;1mVERTICES: 01/03  [====>>----------------------] 16%   ELAPSED TIME: 1.86 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -856,7 +894,7 @@ Reducer 3        container        INITED      1          0        0        1    
 Reducer 2        container       RUNNING      4          0        4        0       0       0  
 Reducer 3        container        INITED      1          0        0        1       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/03  [====>>----------------------] 16%   ELAPSED TIME: 2.34 s     
+[2K[31;1mVERTICES: 01/03  [====>>----------------------] 16%   ELAPSED TIME: 2.36 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -865,14 +903,14 @@ Reducer 3        container        INITED      1          0        0        1    
 Reducer 2 ...... container     SUCCEEDED      4          4        0        0       0       0  
 Reducer 3 ...... container     SUCCEEDED      1          1        0        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 2.68 s     
+[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 2.53 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 INFO  : Starting task [Stage-2:DEPENDENCY_COLLECTION] in serial mode
 INFO  : Starting task [Stage-0:MOVE] in serial mode
-INFO  : Loading data to table team19_projectdb.review_scores_bucketed from hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/review_scores_bucketed/.hive-staging_hive_2025-05-05_01-33-33_747_4801954289958382125-1820/-ext-10000
+INFO  : Loading data to table team19_projectdb.review_scores_bucketed from hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/review_scores_bucketed/.hive-staging_hive_2025-05-05_02-37-02_362_6872719791987891308-1857/-ext-10000
 INFO  : Starting task [Stage-3:STATS] in serial mode
-INFO  : Completed executing command(queryId=hive_20250505013333_cc406b78-025c-4368-a716-4ed16376822a); Time taken: 2.846 seconds
+INFO  : Completed executing command(queryId=hive_20250505023702_e0a2ce0c-de91-47a8-bc10-4781f439d47e); Time taken: 2.683 seconds
 INFO  : OK
-No rows affected (3.078 seconds)
+No rows affected (2.927 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> Closing: 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10001
