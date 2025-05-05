@@ -1,32 +1,38 @@
 #!/usr/bin/env python3
-import psycopg2 as psql
-import pandas as pd
+"""Database setup script for the project to process Airbnb data and load it into PostgreSQL."""
+
 import os
-import io
-from pprint import pprint
+import sys
+import pandas as pd
+import psycopg2 as psql
+
 
 def get_connection_string():
-    """Get connection string from secrets file"""
+    """Get connection string from secrets file."""
     try:
         # Read password from secrets file
-        with open(os.path.join("secrets", "pg_pass"), "r") as file:
+        with open(os.path.join("secrets", "pg_pass"), "r", encoding="utf-8") as file:
             password = file.read().rstrip()
-            
+
         # Build connection string
         print(password)
-        conn_string = f"host=hadoop-04.uni.innopolis.ru port=5432 user=team19 dbname=team19_projectdb password={password}"
+        conn_string = (
+            f"host=hadoop-04.uni.innopolis.ru port=5432 user=team19 "
+            f"dbname=team19_projectdb password={password}"
+        )
         return conn_string
     except FileNotFoundError:
         print("Password file not found. Please create secrets/.psql.pass with your PostgreSQL password.")
-        exit(1)
+        sys.exit(1)
+
 
 def preprocess_data():
-    """Preprocess the data into normalized tables (locations merged into listings)"""
+    """Preprocess the data into normalized tables (locations merged into listings)."""
     print("Preprocessing data...")
-    
+
     data = pd.read_csv(os.path.join("data", "data.csv"), low_memory=False, sep=';')
     data.columns = data.columns.str.strip()
-    
+
     # Hosts
     hosts = data[[
         'Host ID', 'Host URL', 'Host Name', 'Host Since', 'Host Location',
@@ -38,7 +44,8 @@ def preprocess_data():
     hosts.drop_duplicates(subset=['host_id'], inplace=True)
 
     for col in hosts.select_dtypes(include=['object']).columns:
-        hosts[col] = hosts[col].astype(str).str.replace(r'\r|\n', ' ', regex=True).str.replace('nan', '')
+        hosts[col] = (hosts[col].astype(str).str.replace(r'\r|\n', ' ', regex=True)
+                     .str.replace('nan', ''))
 
     # Review scores
     review_scores = data[[
@@ -49,20 +56,25 @@ def preprocess_data():
     review_scores.columns = [col.lower().replace(' ', '_') for col in review_scores.columns]
     review_scores.drop_duplicates(subset=['id'], inplace=True)
     review_scores.rename(columns={'id': 'listing_id'}, inplace=True)
-    
+
     for col in review_scores.select_dtypes(include=['object']).columns:
-        review_scores[col] = review_scores[col].astype(str).str.replace(r'\r|\n', ' ', regex=True).str.replace('nan', '')
+        review_scores[col] = (review_scores[col].astype(str).str.replace(r'\r|\n', ' ', regex=True)
+                             .str.replace('nan', ''))
 
     # Features
     features = []
     if 'Features' in data.columns:
-        for idx, row in data[['ID', 'Features']].iterrows():
+        for _, row in data[['ID', 'Features']].iterrows():
             if pd.notna(row['Features']):
                 feature_list = row['Features'].split(',')
                 for feature in feature_list:
                     feature = feature.strip()
                     if feature:
-                        features.append({'listing_id': row['ID'], 'feature_name': feature, 'feature_value': 'true'})
+                        features.append({
+                            'listing_id': row['ID'],
+                            'feature_name': feature,
+                            'feature_value': 'true'
+                        })
     features_df = pd.DataFrame(features)
     features_df.drop_duplicates(subset=['listing_id', 'feature_name'], inplace=True)
 
@@ -89,8 +101,9 @@ def preprocess_data():
     listings.columns = [col.lower().replace(' ', '_') for col in listings.columns]
 
     for col in listings.select_dtypes(include=['object']).columns:
-        listings[col] = listings[col].astype(str).str.replace(r'\r|\n', ' ', regex=True).str.replace('nan', '')
-    
+        listings[col] = (listings[col].astype(str).str.replace(r'\r|\n', ' ', regex=True)
+                        .str.replace('nan', ''))
+
     listings.drop_duplicates(subset=['id'], inplace=True)
     # Save to CSVs
     hosts.to_csv('data/hosts.csv', index=False, sep=';')
@@ -106,85 +119,92 @@ def preprocess_data():
     }
 
 
-def copy_dataframe_to_table(cursor, df, table_name):
-    """Copy pandas DataFrame to PostgreSQL table"""
+def copy_dataframe_to_table(cursor, dataframe, table_name):
+    """Copy pandas DataFrame to PostgreSQL table.
+
+    Args:
+        cursor: Database cursor
+        dataframe: Pandas DataFrame to copy
+        table_name: Target table name
+    """
     print(f"Importing data into {table_name} table...")
-    
+
     # Create a copy of the dataframe to avoid modifying the original
-    df_copy = df.copy()
-    
+    df_copy = dataframe.copy()
+
     # Handle date fields specifically - identify date columns
     date_columns = []
     if table_name == 'hosts' and 'host_since' in df_copy.columns:
         date_columns.append('host_since')
     elif table_name == 'listings':
-        for col in ['last_scraped', 'first_review', 'last_review', 'calendar_updated', 'calendar_last_scraped']:
+        for col in ['last_scraped', 'first_review', 'last_review',
+                   'calendar_updated', 'calendar_last_scraped']:
             if col in df_copy.columns:
                 date_columns.append(col)
-    
+
     # For each date column, properly format dates and set null values to None
     for col in date_columns:
         # Convert to datetime objects first (this will set invalid dates to NaT)
         df_copy[col] = pd.to_datetime(df_copy[col], errors='coerce')
         # Format valid dates as strings, leave NaT as None
         df_copy[col] = df_copy[col].apply(lambda x: x.strftime('%Y-%m-%d') if pd.notna(x) else None)
-    
+
     # For non-date columns, replace empty strings with None
     for col in df_copy.columns:
         if col not in date_columns:
             df_copy[col] = df_copy[col].apply(lambda x: None if pd.isna(x) or x == '' else x)
-    
+
     # Use temporary CSV file instead of StringIO to ensure correct handling
     temp_csv = f"temp_{table_name}.csv"
     df_copy.to_csv(temp_csv, index=False, header=True, na_rep='\\N', sep=';')
     columns = ', '.join(df_copy.columns.tolist())
     # Open the file and use copy_expert
-    with open(temp_csv, 'r') as f:
+    with open(temp_csv, 'r', encoding="utf-8") as file_handle:
         cursor.copy_expert(
-            f"COPY {table_name}({columns}) FROM STDIN WITH CSV HEADER DELIMITER ';' NULL '\\N'", 
-            f
+            f"COPY {table_name}({columns}) FROM STDIN WITH CSV HEADER DELIMITER ';' NULL '\\N'",
+            file_handle
         )
-    
+
     # Clean up temporary file
     # os.remove(temp_csv)
-    
-    
+
+
 def main():
-    """Main function to build project database"""
+    """Main function to build project database."""
     # Preprocess data
     tables = preprocess_data()
-    
+
     # Get connection string
     conn_string = get_connection_string()
-    
+
     # Connect to the database
     print("Connecting to PostgreSQL database...")
     try:
         with psql.connect(conn_string) as conn:
             print("Connection successful.")
-            
+
             # Create a cursor
             cur = conn.cursor()
-            
+
             # Execute create tables script
             print("Creating tables...")
-            with open(os.path.join("sql", "create_tables.sql")) as file:
+            with open(os.path.join("sql", "create_tables.sql"), encoding="utf-8") as file:
                 content = file.read()
                 cur.execute(content)
             conn.commit()
-            
+
             # Import data for each table
             tables_to_import = ['hosts', 'listings', 'review_scores', 'listing_features']
             for table_name in tables_to_import:
                 if not tables[table_name].empty:
                     copy_dataframe_to_table(cur, tables[table_name], table_name)
-            
+
             # Commit changes
             conn.commit()
-            
+
             # Run test queries
             print("Running test queries...")
-            with open(os.path.join("sql", "test_database.sql")) as file:
+            with open(os.path.join("sql", "test_database.sql"), encoding="utf-8") as file:
                 commands = file.read().split(';')
                 for command in commands:
                     if command.strip():
@@ -200,14 +220,14 @@ def main():
                                     print("...")
                             else:
                                 print("No results returned.")
-            
+
             print("\nDatabase setup completed successfully!")
-    
-    except Exception as e:
-        print(f"Error: {e}")
+            return 0
+
+    except Exception as exception:
+        print(f"Error: {exception}")
         return 1
-    
-    return 0
+
 
 if __name__ == "__main__":
-    exit(main())
+    sys.exit(main())
