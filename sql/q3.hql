@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS q3_results;
 
 -- Create external table to store results
 CREATE EXTERNAL TABLE q3_results(
-  city STRING,
+  country STRING,
   avg_price FLOAT
 )
 ROW FORMAT DELIMITED
@@ -22,19 +22,19 @@ SET hive.resultset.use.unique.column.names = false;
 INSERT INTO q3_results
 
 SELECT 
-  city,
+  country,
   AVG(
     price
   ) AS avg_price
 FROM listings_partitioned
 WHERE price IS NOT NULL
-GROUP BY city
+GROUP BY country
 HAVING 
   AVG(
     price
   ) IS NOT NULL 
 ORDER BY avg_price DESC 
-LIMIT 10;
+LIMIT 15;
 
 -- Verify results
 SELECT * FROM q3_results;

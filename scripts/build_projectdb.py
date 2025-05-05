@@ -11,11 +11,10 @@ def get_connection_string():
     """Get connection string from secrets file."""
     try:
         # Read password from secrets file
-        with open(os.path.join("secrets", "pg_pass"), "r", encoding="utf-8") as file:
+        with open(os.path.join("secrets", ".psql.pass"), "r", encoding="utf-8") as file:
             password = file.read().rstrip()
 
         # Build connection string
-        print(password)
         conn_string = (
             f"host=hadoop-04.uni.innopolis.ru port=5432 user=team19 "
             f"dbname=team19_projectdb password={password}"
@@ -166,7 +165,7 @@ def copy_dataframe_to_table(cursor, dataframe, table_name):
         )
 
     # Clean up temporary file
-    # os.remove(temp_csv)
+    os.remove(temp_csv)
 
 
 def main():

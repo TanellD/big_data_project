@@ -6,28 +6,28 @@ Connected to: Apache Hive (version 3.1.3)
 Driver: Hive JDBC (version 2.3.9)
 Transaction isolation: TRANSACTION_REPEATABLE_READ
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team19_projectdb;
-INFO  : Compiling command(queryId=hive_20250505033116_2e8b1f5f-7426-4a8a-b7e6-13d062f83813): USE team19_projectdb
+INFO  : Compiling command(queryId=hive_20250506015324_4543e3ee-cec7-4773-a22a-2c00854b3b83): USE team19_projectdb
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250505033116_2e8b1f5f-7426-4a8a-b7e6-13d062f83813 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250506015324_4543e3ee-cec7-4773-a22a-2c00854b3b83 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
   Stage: Stage-0
 
 
-INFO  : Completed compiling command(queryId=hive_20250505033116_2e8b1f5f-7426-4a8a-b7e6-13d062f83813); Time taken: 0.049 seconds
-INFO  : Executing command(queryId=hive_20250505033116_2e8b1f5f-7426-4a8a-b7e6-13d062f83813): USE team19_projectdb
+INFO  : Completed compiling command(queryId=hive_20250506015324_4543e3ee-cec7-4773-a22a-2c00854b3b83); Time taken: 0.074 seconds
+INFO  : Executing command(queryId=hive_20250506015324_4543e3ee-cec7-4773-a22a-2c00854b3b83): USE team19_projectdb
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250505033116_2e8b1f5f-7426-4a8a-b7e6-13d062f83813); Time taken: 0.007 seconds
+INFO  : Completed executing command(queryId=hive_20250506015324_4543e3ee-cec7-4773-a22a-2c00854b3b83); Time taken: 0.012 seconds
 INFO  : OK
-No rows affected (0.113 seconds)
+No rows affected (0.149 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DESCRIBE hosts;
-INFO  : Compiling command(queryId=hive_20250505033116_3c4dbc4b-0043-4058-b400-386f42c62e05): DESCRIBE hosts
+INFO  : Compiling command(queryId=hive_20250506015324_0ce965c5-c2a4-4240-8542-d585e5284735): DESCRIBE hosts
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:col_name, type:string, comment:from deserializer), FieldSchema(name:data_type, type:string, comment:from deserializer), FieldSchema(name:comment, type:string, comment:from deserializer)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20250505033116_3c4dbc4b-0043-4058-b400-386f42c62e05 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250506015324_0ce965c5-c2a4-4240-8542-d585e5284735 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
   Stage-1 depends on stages: Stage-0 [FETCH]
 
@@ -35,7 +35,7 @@ STAGE PLANS:
   Stage: Stage-0
       Describe Table Operator:
         Describe Table
-          result file: file:/tmp/hive/7e99c95c-b204-4767-8579-8a1fcd14eeba/hive_2025-05-05_03-31-16_731_7240127083628617865-1930/-local-10000
+          result file: file:/tmp/hive/6e4ca752-336e-4ef1-b8fe-f4c9b53c5d31/hive_2025-05-06_01-53-24_597_3095129576115856859-2999/-local-10000
           table: hosts
 
   Stage: Stage-1
@@ -45,10 +45,10 @@ STAGE PLANS:
         ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20250505033116_3c4dbc4b-0043-4058-b400-386f42c62e05); Time taken: 0.036 seconds
-INFO  : Executing command(queryId=hive_20250505033116_3c4dbc4b-0043-4058-b400-386f42c62e05): DESCRIBE hosts
+INFO  : Completed compiling command(queryId=hive_20250506015324_0ce965c5-c2a4-4240-8542-d585e5284735); Time taken: 0.066 seconds
+INFO  : Executing command(queryId=hive_20250506015324_0ce965c5-c2a4-4240-8542-d585e5284735): DESCRIBE hosts
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250505033116_3c4dbc4b-0043-4058-b400-386f42c62e05); Time taken: 0.012 seconds
+INFO  : Completed executing command(queryId=hive_20250506015324_0ce965c5-c2a4-4240-8542-d585e5284735); Time taken: 0.021 seconds
 INFO  : OK
 +----------------------------+------------+----------+
 |          col_name          | data_type  | comment  |
@@ -69,12 +69,12 @@ INFO  : OK
 | host_total_listings_count  | string     |          |
 | host_verifications         | string     |          |
 +----------------------------+------------+----------+
-15 rows selected (0.131 seconds)
+15 rows selected (0.161 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DESCRIBE listings;
-INFO  : Compiling command(queryId=hive_20250505033116_6fab1f14-1f74-49c2-bb64-1dc71efb556b): DESCRIBE listings
+INFO  : Compiling command(queryId=hive_20250506015324_cf495575-b98d-4925-9ff2-8241ad5e151a): DESCRIBE listings
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:col_name, type:string, comment:from deserializer), FieldSchema(name:data_type, type:string, comment:from deserializer), FieldSchema(name:comment, type:string, comment:from deserializer)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20250505033116_6fab1f14-1f74-49c2-bb64-1dc71efb556b : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250506015324_cf495575-b98d-4925-9ff2-8241ad5e151a : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
   Stage-1 depends on stages: Stage-0 [FETCH]
 
@@ -82,7 +82,7 @@ STAGE PLANS:
   Stage: Stage-0
       Describe Table Operator:
         Describe Table
-          result file: file:/tmp/hive/7e99c95c-b204-4767-8579-8a1fcd14eeba/hive_2025-05-05_03-31-16_869_4987195281341290693-1930/-local-10000
+          result file: file:/tmp/hive/6e4ca752-336e-4ef1-b8fe-f4c9b53c5d31/hive_2025-05-06_01-53-24_767_2969801213207023591-2999/-local-10000
           table: listings
 
   Stage: Stage-1
@@ -92,10 +92,10 @@ STAGE PLANS:
         ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20250505033116_6fab1f14-1f74-49c2-bb64-1dc71efb556b); Time taken: 0.043 seconds
-INFO  : Executing command(queryId=hive_20250505033116_6fab1f14-1f74-49c2-bb64-1dc71efb556b): DESCRIBE listings
+INFO  : Completed compiling command(queryId=hive_20250506015324_cf495575-b98d-4925-9ff2-8241ad5e151a); Time taken: 0.072 seconds
+INFO  : Executing command(queryId=hive_20250506015324_cf495575-b98d-4925-9ff2-8241ad5e151a): DESCRIBE listings
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250505033116_6fab1f14-1f74-49c2-bb64-1dc71efb556b); Time taken: 0.011 seconds
+INFO  : Completed executing command(queryId=hive_20250506015324_cf495575-b98d-4925-9ff2-8241ad5e151a); Time taken: 0.014 seconds
 INFO  : OK
 +---------------------------------+------------+----------+
 |            col_name             | data_type  | comment  |
@@ -168,12 +168,12 @@ INFO  : OK
 | calculated_host_listings_count  | string     |          |
 | reviews_per_month               | string     |          |
 +---------------------------------+------------+----------+
-67 rows selected (0.089 seconds)
+67 rows selected (0.133 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DESCRIBE review_scores;
-INFO  : Compiling command(queryId=hive_20250505033116_9efb8767-757d-48ab-b855-81da4b54a803): DESCRIBE review_scores
+INFO  : Compiling command(queryId=hive_20250506015324_e0a4ad70-cde5-4659-b90b-79958cb1b96d): DESCRIBE review_scores
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:col_name, type:string, comment:from deserializer), FieldSchema(name:data_type, type:string, comment:from deserializer), FieldSchema(name:comment, type:string, comment:from deserializer)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20250505033116_9efb8767-757d-48ab-b855-81da4b54a803 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250506015324_e0a4ad70-cde5-4659-b90b-79958cb1b96d : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
   Stage-1 depends on stages: Stage-0 [FETCH]
 
@@ -181,7 +181,7 @@ STAGE PLANS:
   Stage: Stage-0
       Describe Table Operator:
         Describe Table
-          result file: file:/tmp/hive/7e99c95c-b204-4767-8579-8a1fcd14eeba/hive_2025-05-05_03-31-16_968_4404694333194296948-1930/-local-10000
+          result file: file:/tmp/hive/6e4ca752-336e-4ef1-b8fe-f4c9b53c5d31/hive_2025-05-06_01-53-24_910_8210194020531509725-2999/-local-10000
           table: review_scores
 
   Stage: Stage-1
@@ -191,10 +191,10 @@ STAGE PLANS:
         ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20250505033116_9efb8767-757d-48ab-b855-81da4b54a803); Time taken: 0.035 seconds
-INFO  : Executing command(queryId=hive_20250505033116_9efb8767-757d-48ab-b855-81da4b54a803): DESCRIBE review_scores
+INFO  : Completed compiling command(queryId=hive_20250506015324_e0a4ad70-cde5-4659-b90b-79958cb1b96d); Time taken: 0.048 seconds
+INFO  : Executing command(queryId=hive_20250506015324_e0a4ad70-cde5-4659-b90b-79958cb1b96d): DESCRIBE review_scores
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250505033116_9efb8767-757d-48ab-b855-81da4b54a803); Time taken: 0.011 seconds
+INFO  : Completed executing command(queryId=hive_20250506015324_e0a4ad70-cde5-4659-b90b-79958cb1b96d); Time taken: 0.011 seconds
 INFO  : OK
 +------------------------------+------------+----------+
 |           col_name           | data_type  | comment  |
@@ -208,12 +208,12 @@ INFO  : OK
 | review_scores_location       | string     |          |
 | review_scores_value          | string     |          |
 +------------------------------+------------+----------+
-8 rows selected (0.069 seconds)
+8 rows selected (0.093 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DESCRIBE listing_features;
-INFO  : Compiling command(queryId=hive_20250505033117_f8ceaae2-f07d-4cb6-8a0f-f3fd25411c55): DESCRIBE listing_features
+INFO  : Compiling command(queryId=hive_20250506015325_f820e462-0377-4400-be65-0b2ca761c7e0): DESCRIBE listing_features
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:col_name, type:string, comment:from deserializer), FieldSchema(name:data_type, type:string, comment:from deserializer), FieldSchema(name:comment, type:string, comment:from deserializer)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20250505033117_f8ceaae2-f07d-4cb6-8a0f-f3fd25411c55 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250506015325_f820e462-0377-4400-be65-0b2ca761c7e0 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
   Stage-1 depends on stages: Stage-0 [FETCH]
 
@@ -221,7 +221,7 @@ STAGE PLANS:
   Stage: Stage-0
       Describe Table Operator:
         Describe Table
-          result file: file:/tmp/hive/7e99c95c-b204-4767-8579-8a1fcd14eeba/hive_2025-05-05_03-31-17_047_2892821406854134378-1930/-local-10000
+          result file: file:/tmp/hive/6e4ca752-336e-4ef1-b8fe-f4c9b53c5d31/hive_2025-05-06_01-53-25_015_9196051815246351424-2999/-local-10000
           table: listing_features
 
   Stage: Stage-1
@@ -231,10 +231,10 @@ STAGE PLANS:
         ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20250505033117_f8ceaae2-f07d-4cb6-8a0f-f3fd25411c55); Time taken: 0.032 seconds
-INFO  : Executing command(queryId=hive_20250505033117_f8ceaae2-f07d-4cb6-8a0f-f3fd25411c55): DESCRIBE listing_features
+INFO  : Completed compiling command(queryId=hive_20250506015325_f820e462-0377-4400-be65-0b2ca761c7e0); Time taken: 0.121 seconds
+INFO  : Executing command(queryId=hive_20250506015325_f820e462-0377-4400-be65-0b2ca761c7e0): DESCRIBE listing_features
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250505033117_f8ceaae2-f07d-4cb6-8a0f-f3fd25411c55); Time taken: 0.011 seconds
+INFO  : Completed executing command(queryId=hive_20250506015325_f820e462-0377-4400-be65-0b2ca761c7e0); Time taken: 0.049 seconds
 INFO  : OK
 +----------------+------------+----------+
 |    col_name    | data_type  | comment  |
@@ -243,5 +243,5 @@ INFO  : OK
 | feature_name   | string     |          |
 | feature_value  | string     |          |
 +----------------+------------+----------+
-3 rows selected (0.061 seconds)
+3 rows selected (0.236 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> Closing: 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10001

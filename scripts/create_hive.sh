@@ -4,6 +4,9 @@
 SQL_DIR="./sql"
 OUTPUT_DIR="./output"
 
+HDFS_AVSC_DIR="/user/team19/project/warehouse/avsc"
+LOCAL_OUTPUT_DIR="output"
+
 # Get Hive password
 password=$(head -n 1 secrets/.hive.pass)
 
@@ -29,6 +32,23 @@ BLUE_FILES=(
 
 # Create output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
+
+# Create AVSC folder in HDFS
+echo "Creating HDFS folder for .avsc files..."
+hdfs dfs -mkdir -p $HDFS_AVSC_DIR
+
+
+
+# Move AVSC schema files to HDFS folder
+echo "Moving .avsc schema files to HDFS..."
+hdfs dfs -put -f *.avsc $HDFS_AVSC_DIR
+
+# Move generated files to the local output directory
+echo "Moving generated files to output directory..."
+mv *.avsc *.java $LOCAL_OUTPUT_DIR/ 2>/dev/null || true
+
+
+echo "Stage 1 generated files are moved to output directory✓"
 
 # Function to run a Hive HQL script file
 run_hive_script() {
