@@ -13,11 +13,8 @@ CREATE EXTERNAL TABLE listings_partitioned (
   scrape_id STRING,
   last_scraped DATE,
   name STRING,
-  -- Include all other columns except country and city
   host_id DECIMAL(20,7),
-  -- More columns
   street STRING,
-  -- More location fields excluding country and city
   property_type STRING,
   room_type STRING,
   accommodates DECIMAL(20,7),
