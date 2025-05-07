@@ -1,4 +1,8 @@
-This repository is a template for the final project of big data course. It contains the following directories:
+# About the project
+The project aims to gain knowledge in big data. We utilized Airbnb dataset with a goal to predict price of a listings based on their features.
+
+# About the repo
+This repository is a deliverable for the final project of big data course. It contains the following directories:
 
 - `data/` contains the dataset files.
 - `models/` contains the Spark ML models.
@@ -14,3 +18,5 @@ This repository is a template for the final project of big data course. It conta
 **Important Note:** You cannot change the content of the script `main.sh` since it will be used for assessment purposes.
 
 **Another Note:** The notebooks in `notebooks/` folder are used only for learning purposes since you need to put all Python scripts of the pipeline in `scripts/` folder. During the assessment, the grader can delete the folder `notebooks/` to check that your pipeline does not depend on its content.
+
+

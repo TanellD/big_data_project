@@ -1,4 +1,4 @@
 #!/bin/bash
 
-chmod +x scripts/test_test.sh
-bash scripts/test_test.sh
+chmod +x scripts/run_model.sh
+bash scripts/run_model.sh

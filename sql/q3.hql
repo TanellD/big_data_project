@@ -1,4 +1,4 @@
--- Top 10 city by avg price
+-- Top 15 country by avg price
 
 USE team19_projectdb;
 
