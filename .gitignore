@@ -176,4 +176,5 @@ cython_debug/
 secrets/*
 *.log
 *.zip
+venv*
 
