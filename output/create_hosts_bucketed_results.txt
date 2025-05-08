@@ -6,37 +6,37 @@ Connected to: Apache Hive (version 3.1.3)
 Driver: Hive JDBC (version 2.3.9)
 Transaction isolation: TRANSACTION_REPEATABLE_READ
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team19_projectdb;
-INFO  : Compiling command(queryId=hive_20250506015242_89e4fae5-48dd-45ee-8b17-abadecb1333e): USE team19_projectdb
+INFO  : Compiling command(queryId=hive_20250508184605_3c77a5bb-a178-4203-a2c2-365109e35f91): USE team19_projectdb
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250506015242_89e4fae5-48dd-45ee-8b17-abadecb1333e : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250508184605_3c77a5bb-a178-4203-a2c2-365109e35f91 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
   Stage: Stage-0
 
 
-INFO  : Completed compiling command(queryId=hive_20250506015242_89e4fae5-48dd-45ee-8b17-abadecb1333e); Time taken: 0.05 seconds
-INFO  : Executing command(queryId=hive_20250506015242_89e4fae5-48dd-45ee-8b17-abadecb1333e): USE team19_projectdb
+INFO  : Completed compiling command(queryId=hive_20250508184605_3c77a5bb-a178-4203-a2c2-365109e35f91); Time taken: 0.066 seconds
+INFO  : Executing command(queryId=hive_20250508184605_3c77a5bb-a178-4203-a2c2-365109e35f91): USE team19_projectdb
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250506015242_89e4fae5-48dd-45ee-8b17-abadecb1333e); Time taken: 0.009 seconds
+INFO  : Completed executing command(queryId=hive_20250508184605_3c77a5bb-a178-4203-a2c2-365109e35f91); Time taken: 0.015 seconds
 INFO  : OK
-No rows affected (0.118 seconds)
+No rows affected (0.155 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.enforce.bucketing = true;
-No rows affected (0.003 seconds)
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.exec.dynamic.partition.mode=nonstrict;
-No rows affected (0.005 seconds)
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.exec.max.dynamic.partitions=5000;
 No rows affected (0.004 seconds)
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.exec.max.dynamic.partitions.pernode=1000;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.exec.dynamic.partition.mode=nonstrict;
 No rows affected (0.006 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.exec.max.dynamic.partitions=5000;
+No rows affected (0.002 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.exec.max.dynamic.partitions.pernode=1000;
+No rows affected (0.003 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- Drop the table if it exists
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE IF EXISTS hosts_bucketed;
-INFO  : Compiling command(queryId=hive_20250506015242_cd3320ba-1161-4b5f-8429-89d57b6396a0): DROP TABLE IF EXISTS hosts_bucketed
+INFO  : Compiling command(queryId=hive_20250508184605_6885aaeb-a939-4f24-9e56-b1c31fa982e9): DROP TABLE IF EXISTS hosts_bucketed
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250506015242_cd3320ba-1161-4b5f-8429-89d57b6396a0 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250508184605_6885aaeb-a939-4f24-9e56-b1c31fa982e9 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
@@ -46,10 +46,10 @@ STAGE PLANS:
           table: hosts_bucketed
 
 
-INFO  : Completed compiling command(queryId=hive_20250506015242_cd3320ba-1161-4b5f-8429-89d57b6396a0); Time taken: 0.033 seconds
-INFO  : Executing command(queryId=hive_20250506015242_cd3320ba-1161-4b5f-8429-89d57b6396a0): DROP TABLE IF EXISTS hosts_bucketed
+INFO  : Completed compiling command(queryId=hive_20250508184605_6885aaeb-a939-4f24-9e56-b1c31fa982e9); Time taken: 0.038 seconds
+INFO  : Executing command(queryId=hive_20250508184605_6885aaeb-a939-4f24-9e56-b1c31fa982e9): DROP TABLE IF EXISTS hosts_bucketed
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250506015242_cd3320ba-1161-4b5f-8429-89d57b6396a0); Time taken: 0.005 seconds
+INFO  : Completed executing command(queryId=hive_20250508184605_6885aaeb-a939-4f24-9e56-b1c31fa982e9); Time taken: 0.004 seconds
 INFO  : OK
 No rows affected (0.063 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
@@ -71,7 +71,7 @@ No rows affected (0.063 seconds)
 . . . . . . . . . . . . . . . . . . . . . . .> CLUSTERED BY (host_location) INTO 1000 BUCKETS
 . . . . . . . . . . . . . . . . . . . . . . .> STORED AS AVRO
 . . . . . . . . . . . . . . . . . . . . . . .> LOCATION 'project/warehouse/hosts_bucketed';
-INFO  : Compiling command(queryId=hive_20250506015242_d3d9f336-5213-44a6-9616-7eafa73677a2): CREATE EXTERNAL TABLE hosts_bucketed (
+INFO  : Compiling command(queryId=hive_20250508184605_ddcfa8b0-8b70-4903-a34e-884646d513ff): CREATE EXTERNAL TABLE hosts_bucketed (
 host_id DECIMAL(20,7),
 host_url STRING,
 host_name STRING,
@@ -90,7 +90,7 @@ STORED AS AVRO
 LOCATION 'project/warehouse/hosts_bucketed'
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250506015242_d3d9f336-5213-44a6-9616-7eafa73677a2 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250508184605_ddcfa8b0-8b70-4903-a34e-884646d513ff : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
@@ -108,8 +108,8 @@ STAGE PLANS:
           isExternal: true
 
 
-INFO  : Completed compiling command(queryId=hive_20250506015242_d3d9f336-5213-44a6-9616-7eafa73677a2); Time taken: 0.034 seconds
-INFO  : Executing command(queryId=hive_20250506015242_d3d9f336-5213-44a6-9616-7eafa73677a2): CREATE EXTERNAL TABLE hosts_bucketed (
+INFO  : Completed compiling command(queryId=hive_20250508184605_ddcfa8b0-8b70-4903-a34e-884646d513ff); Time taken: 0.031 seconds
+INFO  : Executing command(queryId=hive_20250508184605_ddcfa8b0-8b70-4903-a34e-884646d513ff): CREATE EXTERNAL TABLE hosts_bucketed (
 host_id DECIMAL(20,7),
 host_url STRING,
 host_name STRING,
@@ -127,9 +127,9 @@ CLUSTERED BY (host_location) INTO 1000 BUCKETS
 STORED AS AVRO
 LOCATION 'project/warehouse/hosts_bucketed'
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250506015242_d3d9f336-5213-44a6-9616-7eafa73677a2); Time taken: 0.027 seconds
+INFO  : Completed executing command(queryId=hive_20250508184605_ddcfa8b0-8b70-4903-a34e-884646d513ff); Time taken: 0.044 seconds
 INFO  : OK
-No rows affected (0.095 seconds)
+No rows affected (0.111 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- Insert data into the bucketed table
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> INSERT OVERWRITE TABLE hosts_bucketed
@@ -137,17 +137,17 @@ No rows affected (0.095 seconds)
 . . . . . . . . . . . . . . . . . . . . . . .>   CAST(host_id AS DECIMAL(20,7)) AS host_id,
 . . . . . . . . . . . . . . . . . . . . . . .>   host_url,
 . . . . . . . . . . . . . . . . . . . . . . .>   host_name,
-. . . . . . . . . . . . . . . . . . . . . . .>   FROM_UNIXTIME(CAST(host_since/1000 AS BIGINT), 'yyyy-MM-dd') AS host_since, 
+. . . . . . . . . . . . . . . . . . . . . . .>   FROM_UNIXTIME(CAST(host_since/1000 AS BIGINT), 'yyyy-MM-dd') AS host_since,
 . . . . . . . . . . . . . . . . . . . . . . .>   host_location,
 . . . . . . . . . . . . . . . . . . . . . . .>   host_about,
 . . . . . . . . . . . . . . . . . . . . . . .>   host_response_time,
 . . . . . . . . . . . . . . . . . . . . . . .>   CAST(host_response_rate AS DECIMAL(20,7)) AS host_response_rate,
 . . . . . . . . . . . . . . . . . . . . . . .>   host_acceptance_rate,
 . . . . . . . . . . . . . . . . . . . . . . .>   CAST(host_listings_count AS DECIMAL(20,7)) AS host_listings_count,
-. . . . . . . . . . . . . . . . . . . . . . .>   CAST(host_total_listings_count AS DECIMAL(20,7)) AS host_total_listings_cou nt,
+. . . . . . . . . . . . . . . . . . . . . . .>   CAST(host_total_listings_count AS DECIMAL(20,7)) AS host_total_listings_coun t,
 . . . . . . . . . . . . . . . . . . . . . . .>   host_verifications
 . . . . . . . . . . . . . . . . . . . . . . .> FROM hosts;
-INFO  : Compiling command(queryId=hive_20250506015242_ac051d2b-5e92-45be-b7f1-60913f45ac1f): INSERT OVERWRITE TABLE hosts_bucketed
+INFO  : Compiling command(queryId=hive_20250508184606_55d713bf-3b58-45ac-ba49-3d6944687958): INSERT OVERWRITE TABLE hosts_bucketed
 SELECT
 CAST(host_id AS DECIMAL(20,7)) AS host_id,
 host_url,
@@ -164,7 +164,7 @@ host_verifications
 FROM hosts
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:_col0, type:decimal(20,7), comment:null), FieldSchema(name:_col1, type:string, comment:null), FieldSchema(name:_col2, type:string, comment:null), FieldSchema(name:_col3, type:date, comment:null), FieldSchema(name:_col4, type:string, comment:null), FieldSchema(name:_col5, type:string, comment:null), FieldSchema(name:_col6, type:string, comment:null), FieldSchema(name:_col7, type:decimal(20,7), comment:null), FieldSchema(name:_col8, type:string, comment:null), FieldSchema(name:_col9, type:decimal(20,7), comment:null), FieldSchema(name:_col10, type:decimal(20,7), comment:null), FieldSchema(name:_col11, type:string, comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20250506015242_ac051d2b-5e92-45be-b7f1-60913f45ac1f : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250508184606_55d713bf-3b58-45ac-ba49-3d6944687958 : STAGE DEPENDENCIES:
   Stage-1 is a root stage [MAPRED]
   Stage-2 depends on stages: Stage-1 [DEPENDENCY_COLLECTION]
   Stage-0 depends on stages: Stage-2 [MOVE]
@@ -173,10 +173,10 @@ INFO  : EXPLAIN output for queryid hive_20250506015242_ac051d2b-5e92-45be-b7f1-6
 STAGE PLANS:
   Stage: Stage-1
     Tez
-      DagId: hive_20250506015242_ac051d2b-5e92-45be-b7f1-60913f45ac1f:3419
+      DagId: hive_20250508184606_55d713bf-3b58-45ac-ba49-3d6944687958:11876
       Edges:
         Reducer 2 <- Map 1 (CUSTOM_SIMPLE_EDGE)
-      DagName: hive_20250506015242_ac051d2b-5e92-45be-b7f1-60913f45ac1f:3419
+      DagName: hive_20250508184606_55d713bf-3b58-45ac-ba49-3d6944687958:11876
       Vertices:
         Map 1 
             Map Operator Tree:
@@ -223,7 +223,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 46901820
-                    transient_lastDdlTime 1746485558
+                    transient_lastDdlTime 1746719162
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -247,7 +247,7 @@ STAGE PLANS:
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                       totalSize 46901820
-                      transient_lastDdlTime 1746485558
+                      transient_lastDdlTime 1746719162
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.hosts
                   name: team19_projectdb.hosts
@@ -264,10 +264,10 @@ STAGE PLANS:
                 File Output Operator
                   compressed: false
                   GlobalTableId: 1
-                  directory: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/hosts_bucketed/.hive-staging_hive_2025-05-06_01-52-42_867_6849235201587883510-2999/-ext-10000
+                  directory: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/hosts_bucketed/.hive-staging_hive_2025-05-08_18-46-06_151_1133880596826589695-9159/-ext-10000
                   NumFilesPerFileSink: 1
                   Statistics: Num rows: 294609 Data size: 469018208 Basic stats: COMPLETE Column stats: NONE
-                  Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/hosts_bucketed/.hive-staging_hive_2025-05-06_01-52-42_867_6849235201587883510-2999/-ext-10000/
+                  Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/hosts_bucketed/.hive-staging_hive_2025-05-08_18-46-06_151_1133880596826589695-9159/-ext-10000/
                   table:
                       input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
                       output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
@@ -288,7 +288,7 @@ STAGE PLANS:
                         serialization.ddl struct hosts_bucketed { decimal(20,7) host_id, string host_url, string host_name, date host_since, string host_location, string host_about, string host_response_time, decimal(20,7) host_response_rate, string host_acceptance_rate, decimal(20,7) host_listings_count, decimal(20,7) host_total_listings_count, string host_verifications}
                         serialization.format 1
                         serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                        transient_lastDdlTime 1746485562
+                        transient_lastDdlTime 1746719165
                       serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                       name: team19_projectdb.hosts_bucketed
                   TotalFiles: 1
@@ -302,7 +302,7 @@ STAGE PLANS:
     Move Operator
       tables:
           replace: true
-          source: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/hosts_bucketed/.hive-staging_hive_2025-05-06_01-52-42_867_6849235201587883510-2999/-ext-10000
+          source: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/hosts_bucketed/.hive-staging_hive_2025-05-08_18-46-06_151_1133880596826589695-9159/-ext-10000
           table:
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
               output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
@@ -323,18 +323,18 @@ STAGE PLANS:
                 serialization.ddl struct hosts_bucketed { decimal(20,7) host_id, string host_url, string host_name, date host_since, string host_location, string host_about, string host_response_time, decimal(20,7) host_response_rate, string host_acceptance_rate, decimal(20,7) host_listings_count, decimal(20,7) host_total_listings_count, string host_verifications}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485562
+                transient_lastDdlTime 1746719165
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.hosts_bucketed
 
   Stage: Stage-3
     Stats Work
       Basic Stats Work:
-          Stats Aggregation Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/hosts_bucketed/.hive-staging_hive_2025-05-06_01-52-42_867_6849235201587883510-2999/-ext-10000/
+          Stats Aggregation Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/hosts_bucketed/.hive-staging_hive_2025-05-08_18-46-06_151_1133880596826589695-9159/-ext-10000/
 
 
-INFO  : Completed compiling command(queryId=hive_20250506015242_ac051d2b-5e92-45be-b7f1-60913f45ac1f); Time taken: 0.209 seconds
-INFO  : Executing command(queryId=hive_20250506015242_ac051d2b-5e92-45be-b7f1-60913f45ac1f): INSERT OVERWRITE TABLE hosts_bucketed
+INFO  : Completed compiling command(queryId=hive_20250508184606_55d713bf-3b58-45ac-ba49-3d6944687958); Time taken: 0.561 seconds
+INFO  : Executing command(queryId=hive_20250508184606_55d713bf-3b58-45ac-ba49-3d6944687958): INSERT OVERWRITE TABLE hosts_bucketed
 SELECT
 CAST(host_id AS DECIMAL(20,7)) AS host_id,
 host_url,
@@ -349,38 +349,22 @@ CAST(host_listings_count AS DECIMAL(20,7)) AS host_listings_count,
 CAST(host_total_listings_count AS DECIMAL(20,7)) AS host_total_listings_count,
 host_verifications
 FROM hosts
-INFO  : Query ID = hive_20250506015242_ac051d2b-5e92-45be-b7f1-60913f45ac1f
+INFO  : Query ID = hive_20250508184606_55d713bf-3b58-45ac-ba49-3d6944687958
 INFO  : Total jobs = 1
 INFO  : Launching Job 1 out of 1
 INFO  : Starting task [Stage-1:MAPRED] in serial mode
-INFO  : Subscribed to counters: [] for queryId: hive_20250506015242_ac051d2b-5e92-45be-b7f1-60913f45ac1f
+INFO  : Subscribed to counters: [] for queryId: hive_20250508184606_55d713bf-3b58-45ac-ba49-3d6944687958
 INFO  : Tez session hasn't been created yet. Opening session
 INFO  : Dag name: INSERT OVERWRITE TABLE hosts_buckete...hosts (Stage-1)
-INFO  : Status: Running (Executing on YARN cluster with App id application_1745788519616_3234)
+INFO  : Status: Running (Executing on YARN cluster with App id application_1745788519616_11199)
 
 [2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container        INITED      1          0        0        1       0       0  
+[2KMap 1            container       RUNNING      1          0        1        0       0       0  
 Reducer 2        container        INITED   1000          0        0     1000       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 1.14 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[8A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container        INITED      1          0        0        1       0       0  
-Reducer 2        container        INITED   1000          0        0     1000       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 1.65 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[8A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container        INITED      1          0        0        1       0       0  
-Reducer 2        container        INITED   1000          0        0     1000       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 2.15 s     
+[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 3.94 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -388,7 +372,7 @@ Reducer 2        container        INITED   1000          0        0     1000    
 [2KMap 1            container       RUNNING      1          0        1        0       0       0  
 Reducer 2        container        INITED   1000          0        0     1000       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 2.65 s     
+[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 4.44 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -396,7 +380,7 @@ Reducer 2        container        INITED   1000          0        0     1000    
 [2KMap 1            container       RUNNING      1          0        1        0       0       0  
 Reducer 2        container        INITED   1000          0        0     1000       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 3.16 s     
+[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 5.45 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -404,7 +388,7 @@ Reducer 2        container        INITED   1000          0        0     1000    
 [2KMap 1            container       RUNNING      1          0        1        0       0       0  
 Reducer 2        container        INITED   1000          0        0     1000       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 3.66 s     
+[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 6.45 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -412,191 +396,151 @@ Reducer 2        container        INITED   1000          0        0     1000    
 [2KMap 1            container       RUNNING      1          0        1        0       0       0  
 Reducer 2        container        INITED   1000          0        0     1000       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 4.17 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[8A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      1          0        1        0       0       0  
-Reducer 2        container        INITED   1000          0        0     1000       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 4.67 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[8A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      1          0        1        0       0       0  
-Reducer 2        container        INITED   1000          0        0     1000       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 5.17 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[8A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      1          0        1        0       0       0  
-Reducer 2        container        INITED   1000          0        0     1000       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 5.67 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[8A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      1          0        1        0       0       0  
-Reducer 2        container        INITED   1000          0        0     1000       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 6.18 s     
+[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 7.45 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2        container       RUNNING   1000          6        1      993       0       0  
+Reducer 2        container       RUNNING   1000          0        1      999       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [>>--------------------------] 0%    ELAPSED TIME: 7.18 s     
+[2K[31;1mVERTICES: 01/02  [>>--------------------------] 0%    ELAPSED TIME: 8.45 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2        container       RUNNING   1000         16        2      982       0       0  
+Reducer 2        container       RUNNING   1000          3        1      996       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [>>--------------------------] 1%    ELAPSED TIME: 8.18 s     
+[2K[31;1mVERTICES: 01/02  [>>--------------------------] 0%    ELAPSED TIME: 9.46 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2        container       RUNNING   1000         18        4      978       0       0  
+Reducer 2        container       RUNNING   1000          7        1      992       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [>>--------------------------] 1%    ELAPSED TIME: 9.19 s     
+[2K[31;1mVERTICES: 01/02  [>>--------------------------] 0%    ELAPSED TIME: 10.46 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2        container       RUNNING   1000         28        5      967       0       0  
+Reducer 2        container       RUNNING   1000         10        3      987       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [>>--------------------------] 2%    ELAPSED TIME: 10.19 s    
+[2K[31;1mVERTICES: 01/02  [>>--------------------------] 1%    ELAPSED TIME: 11.47 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2        container       RUNNING   1000         37        6      957       0       0  
+Reducer 2        container       RUNNING   1000         15        4      981       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [>>--------------------------] 3%    ELAPSED TIME: 11.19 s    
+[2K[31;1mVERTICES: 01/02  [>>--------------------------] 1%    ELAPSED TIME: 12.47 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2        container       RUNNING   1000         54        8      938       0       0  
+Reducer 2        container       RUNNING   1000         29        5      966       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [=>>-------------------------] 5%    ELAPSED TIME: 12.20 s    
+[2K[31;1mVERTICES: 01/02  [>>--------------------------] 2%    ELAPSED TIME: 13.47 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2        container       RUNNING   1000         76       10      914       0       0  
+Reducer 2        container       RUNNING   1000         46        6      948       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [==>>------------------------] 7%    ELAPSED TIME: 13.20 s    
+[2K[31;1mVERTICES: 01/02  [=>>-------------------------] 4%    ELAPSED TIME: 14.47 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2        container       RUNNING   1000        105       12      883       0       0  
+Reducer 2        container       RUNNING   1000         81        7      912       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [==>>------------------------] 10%   ELAPSED TIME: 14.20 s    
+[2K[31;1mVERTICES: 01/02  [==>>------------------------] 8%    ELAPSED TIME: 15.98 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2        container       RUNNING   1000        140       12      848       0       0  
+Reducer 2        container       RUNNING   1000        115        8      877       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [===>>-----------------------] 14%   ELAPSED TIME: 15.21 s    
+[2K[31;1mVERTICES: 01/02  [===>>-----------------------] 11%   ELAPSED TIME: 17.48 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 .      container       RUNNING   1000        176       13      811       0       0  
+Reducer 2 .      container       RUNNING   1000        174       10      816       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [====>>----------------------] 17%   ELAPSED TIME: 16.21 s    
+[2K[31;1mVERTICES: 01/02  [====>>----------------------] 17%   ELAPSED TIME: 18.98 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 .      container       RUNNING   1000        240       15      745       0       0  
+Reducer 2 .      container       RUNNING   1000        229       11      760       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [======>>--------------------] 24%   ELAPSED TIME: 17.71 s    
+[2K[31;1mVERTICES: 01/02  [=====>>---------------------] 22%   ELAPSED TIME: 20.49 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 .      container       RUNNING   1000        318       15      667       0       0  
+Reducer 2 .      container       RUNNING   1000        291       12      697       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [========>>------------------] 31%   ELAPSED TIME: 19.22 s    
+[2K[31;1mVERTICES: 01/02  [=======>>-------------------] 29%   ELAPSED TIME: 21.99 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 ..     container       RUNNING   1000        410       15      575       0       0  
+Reducer 2 ..     container       RUNNING   1000        342       13      645       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [==========>>----------------] 41%   ELAPSED TIME: 20.72 s    
+[2K[31;1mVERTICES: 01/02  [========>>------------------] 34%   ELAPSED TIME: 23.49 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 ..     container       RUNNING   1000        477       15      508       0       0  
+Reducer 2 ..     container       RUNNING   1000        406       15      579       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [============>>--------------] 47%   ELAPSED TIME: 22.23 s    
+[2K[31;1mVERTICES: 01/02  [==========>>----------------] 40%   ELAPSED TIME: 24.99 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 ...    container       RUNNING   1000        571       15      414       0       0  
+Reducer 2 ..     container       RUNNING   1000        486       17      497       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [==============>>------------] 57%   ELAPSED TIME: 23.73 s    
+[2K[31;1mVERTICES: 01/02  [============>>--------------] 48%   ELAPSED TIME: 27.00 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 ....   container       RUNNING   1000        669       14      317       0       0  
+Reducer 2 ...    container       RUNNING   1000        570       22      408       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [=================>>---------] 66%   ELAPSED TIME: 25.24 s    
+[2K[31;1mVERTICES: 01/02  [==============>>------------] 57%   ELAPSED TIME: 29.00 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 ....   container       RUNNING   1000        769       14      217       0       0  
+Reducer 2 ....   container       RUNNING   1000        685       25      290       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [====================>>------] 76%   ELAPSED TIME: 26.74 s    
+[2K[31;1mVERTICES: 01/02  [=================>>---------] 68%   ELAPSED TIME: 31.00 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 .....  container       RUNNING   1000        860       14      126       0       0  
+Reducer 2 ....   container       RUNNING   1000        833       23      144       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [======================>>----] 86%   ELAPSED TIME: 28.75 s    
-[22;0m[2K----------------------------------------------------------------------------------------------
-[8A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 .....  container       RUNNING   1000        994        6        0       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/02  [=========================>>-] 99%   ELAPSED TIME: 30.75 s    
+[2K[31;1mVERTICES: 01/02  [=====================>>-----] 83%   ELAPSED TIME: 33.01 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -604,7 +548,7 @@ Reducer 2 .....  container       RUNNING   1000        994        6        0    
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
 Reducer 2 ...... container     SUCCEEDED   1000       1000        0        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 32.75 s    
+[2K[31;1mVERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 35.01 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -612,21 +556,13 @@ Reducer 2 ...... container     SUCCEEDED   1000       1000        0        0    
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
 Reducer 2 ...... container     SUCCEEDED   1000       1000        0        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 34.75 s    
-[22;0m[2K----------------------------------------------------------------------------------------------
-[8A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 ...... container     SUCCEEDED   1000       1000        0        0       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 35.15 s    
+[2K[31;1mVERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 37.29 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 INFO  : Starting task [Stage-2:DEPENDENCY_COLLECTION] in serial mode
 INFO  : Starting task [Stage-0:MOVE] in serial mode
-INFO  : Loading data to table team19_projectdb.hosts_bucketed from hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/hosts_bucketed/.hive-staging_hive_2025-05-06_01-52-42_867_6849235201587883510-2999/-ext-10000
+INFO  : Loading data to table team19_projectdb.hosts_bucketed from hdfs://hadoop-02.uni.innopolis.ru:8020/user/team19/project/warehouse/hosts_bucketed/.hive-staging_hive_2025-05-08_18-46-06_151_1133880596826589695-9159/-ext-10000
 INFO  : Starting task [Stage-3:STATS] in serial mode
-INFO  : Completed executing command(queryId=hive_20250506015242_ac051d2b-5e92-45be-b7f1-60913f45ac1f); Time taken: 39.104 seconds
+INFO  : Completed executing command(queryId=hive_20250508184606_55d713bf-3b58-45ac-ba49-3d6944687958); Time taken: 42.533 seconds
 INFO  : OK
-No rows affected (39.332 seconds)
+No rows affected (43.117 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> Closing: 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10001

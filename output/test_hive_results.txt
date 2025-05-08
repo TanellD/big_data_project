@@ -6,34 +6,34 @@ Connected to: Apache Hive (version 3.1.3)
 Driver: Hive JDBC (version 2.3.9)
 Transaction isolation: TRANSACTION_REPEATABLE_READ
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team19_projectdb;
-INFO  : Compiling command(queryId=hive_20250506015354_5c4d271b-ac74-432b-8912-43d3c6ef9162): USE team19_projectdb
+INFO  : Compiling command(queryId=hive_20250508184718_0ec691bd-bf63-4a76-91a0-ec29f8551846): USE team19_projectdb
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20250506015354_5c4d271b-ac74-432b-8912-43d3c6ef9162 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250508184718_0ec691bd-bf63-4a76-91a0-ec29f8551846 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
   Stage: Stage-0
 
 
-INFO  : Completed compiling command(queryId=hive_20250506015354_5c4d271b-ac74-432b-8912-43d3c6ef9162); Time taken: 0.103 seconds
-INFO  : Executing command(queryId=hive_20250506015354_5c4d271b-ac74-432b-8912-43d3c6ef9162): USE team19_projectdb
+INFO  : Completed compiling command(queryId=hive_20250508184718_0ec691bd-bf63-4a76-91a0-ec29f8551846); Time taken: 0.061 seconds
+INFO  : Executing command(queryId=hive_20250508184718_0ec691bd-bf63-4a76-91a0-ec29f8551846): USE team19_projectdb
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20250506015354_5c4d271b-ac74-432b-8912-43d3c6ef9162); Time taken: 0.066 seconds
+INFO  : Completed executing command(queryId=hive_20250508184718_0ec691bd-bf63-4a76-91a0-ec29f8551846); Time taken: 0.016 seconds
 INFO  : OK
-No rows affected (0.249 seconds)
+No rows affected (0.127 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- Verify partitioned table
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SELECT * 
 . . . . . . . . . . . . . . . . . . . . . . .> FROM listings_partitioned 
 . . . . . . . . . . . . . . . . . . . . . . .> LIMIT 10;
-INFO  : Compiling command(queryId=hive_20250506015355_c9506f5d-af29-4aad-8069-920100f5f638): SELECT *
+INFO  : Compiling command(queryId=hive_20250508184718_5e124228-9203-486a-b789-b18f3e73d6c8): SELECT *
 FROM listings_partitioned
 LIMIT 10
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:listings_partitioned.id, type:string, comment:null), FieldSchema(name:listings_partitioned.listing_url, type:string, comment:null), FieldSchema(name:listings_partitioned.scrape_id, type:string, comment:null), FieldSchema(name:listings_partitioned.last_scraped, type:date, comment:null), FieldSchema(name:listings_partitioned.name, type:string, comment:null), FieldSchema(name:listings_partitioned.host_id, type:decimal(20,7), comment:null), FieldSchema(name:listings_partitioned.street, type:string, comment:null), FieldSchema(name:listings_partitioned.property_type, type:string, comment:null), FieldSchema(name:listings_partitioned.room_type, type:string, comment:null), FieldSchema(name:listings_partitioned.accommodates, type:decimal(20,7), comment:null), FieldSchema(name:listings_partitioned.bathrooms, type:decimal(20,7), comment:null), FieldSchema(name:listings_partitioned.bedrooms, type:decimal(20,7), comment:null), FieldSchema(name:listings_partitioned.beds, type:decimal(20,7), comment:null), FieldSchema(name:listings_partitioned.price, type:string, comment:null), FieldSchema(name:listings_partitioned.number_of_reviews, type:decimal(20,7), comment:null), FieldSchema(name:listings_partitioned.reviews_per_month, type:decimal(20,7), comment:null), FieldSchema(name:listings_partitioned.city, type:string, comment:null), FieldSchema(name:listings_partitioned.country, type:string, comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20250506015355_c9506f5d-af29-4aad-8069-920100f5f638 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250508184718_5e124228-9203-486a-b789-b18f3e73d6c8 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [FETCH]
 
 STAGE PLANS:
@@ -66,7 +66,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 4805405
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -88,7 +88,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -117,7 +117,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 907966
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -139,7 +139,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -168,7 +168,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 951392
-              transient_lastDdlTime 1746485626
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -190,7 +190,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -219,7 +219,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 3703585
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -241,7 +241,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -270,7 +270,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 17830
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -292,7 +292,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -321,7 +321,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 2508173
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -343,7 +343,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -372,7 +372,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 7035091
-              transient_lastDdlTime 1746485626
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -394,7 +394,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -423,7 +423,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 2407257
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -445,7 +445,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -474,7 +474,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 610007
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -496,7 +496,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -525,7 +525,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 856160
-              transient_lastDdlTime 1746485626
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -547,7 +547,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -576,7 +576,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 807082
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -598,7 +598,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -627,7 +627,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 3719481
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -649,7 +649,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -678,7 +678,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 1894
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -700,7 +700,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -729,7 +729,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 1869373
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -751,7 +751,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -780,7 +780,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 5396948
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -802,7 +802,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -831,7 +831,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 304546
-              transient_lastDdlTime 1746485626
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -853,7 +853,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -882,7 +882,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 7562495
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -904,7 +904,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -933,7 +933,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 16283093
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -955,7 +955,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -984,7 +984,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 1877
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1006,7 +1006,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -1035,7 +1035,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 1904
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1057,7 +1057,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -1086,7 +1086,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
               totalSize 1913
-              transient_lastDdlTime 1746485625
+              transient_lastDdlTime 1746719231
             serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
           
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1108,7 +1108,7 @@ STAGE PLANS:
                 serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1746485607
+                transient_lastDdlTime 1746719214
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team19_projectdb.listings_partitioned
             name: team19_projectdb.listings_partitioned
@@ -1124,11 +1124,11 @@ STAGE PLANS:
               ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20250506015355_c9506f5d-af29-4aad-8069-920100f5f638); Time taken: 0.474 seconds
-INFO  : Executing command(queryId=hive_20250506015355_c9506f5d-af29-4aad-8069-920100f5f638): SELECT *
+INFO  : Completed compiling command(queryId=hive_20250508184718_5e124228-9203-486a-b789-b18f3e73d6c8); Time taken: 0.445 seconds
+INFO  : Executing command(queryId=hive_20250508184718_5e124228-9203-486a-b789-b18f3e73d6c8): SELECT *
 FROM listings_partitioned
 LIMIT 10
-INFO  : Completed executing command(queryId=hive_20250506015355_c9506f5d-af29-4aad-8069-920100f5f638); Time taken: 0.001 seconds
+INFO  : Completed executing command(queryId=hive_20250508184718_5e124228-9203-486a-b789-b18f3e73d6c8); Time taken: 0.0 seconds
 INFO  : OK
 +--------------------------+----------------------------------------+---------------------------------+------------------------------------+----------------------------------------------------+-------------------------------+----------------------------------------------------+-------------------------------------+---------------------------------+------------------------------------+---------------------------------+--------------------------------+----------------------------+-----------------------------+-----------------------------------------+-----------------------------------------+----------------------------+-------------------------------+
 | listings_partitioned.id  |    listings_partitioned.listing_url    | listings_partitioned.scrape_id  | listings_partitioned.last_scraped  |             listings_partitioned.name              | listings_partitioned.host_id  |            listings_partitioned.street             | listings_partitioned.property_type  | listings_partitioned.room_type  | listings_partitioned.accommodates  | listings_partitioned.bathrooms  | listings_partitioned.bedrooms  | listings_partitioned.beds  | listings_partitioned.price  | listings_partitioned.number_of_reviews  | listings_partitioned.reviews_per_month  | listings_partitioned.city  | listings_partitioned.country  |
@@ -1144,30 +1144,30 @@ INFO  : OK
 | 4054858                  | https://www.airbnb.com/rooms/4054858   | 20170403112154                  | 2017-04-03                         | Awesome Central 2 Bedroom House                    | 2659259.0000000               | Kensington, Kensington, VIC 3031, Australia        | House                               | Entire home/apt                 | 4.0000000                          | 1.0000000                       | 2.0000000                      | 2.0000000                  | 97.0000000                  | 13.0000000                              | 0.4400000                               | Kensington                 | Australia                     |
 | 16898750                 | https://www.airbnb.com/rooms/16898750  | 20170403112154                  | 2017-04-03                         | Harbour View   **OPENING SPECIAL**                 | 73274465.0000000              | Docklands, VIC 3008, Australia                     | Apartment                           | Entire home/apt                 | 4.0000000                          | 1.0000000                       | 2.0000000                      | 3.0000000                  | 145.0000000                 | 6.0000000                               | 2.7300000                               | Docklands                  | Australia                     |
 +--------------------------+----------------------------------------+---------------------------------+------------------------------------+----------------------------------------------------+-------------------------------+----------------------------------------------------+-------------------------------------+---------------------------------+------------------------------------+---------------------------------+--------------------------------+----------------------------+-----------------------------+-----------------------------------------+-----------------------------------------+----------------------------+-------------------------------+
-10 rows selected (0.618 seconds)
+10 rows selected (0.59 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- Join the tables to test relationships
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SELECT l.name, l.property_type, r.review_scores_rating, r.review_scores_clean liness
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SELECT l.name, l.property_type, r.review_scores_rating, r.review_scores_cleanl iness
 . . . . . . . . . . . . . . . . . . . . . . .> FROM listings_partitioned l
 . . . . . . . . . . . . . . . . . . . . . . .> JOIN review_scores_bucketed r ON l.id = r.listing_id
 . . . . . . . . . . . . . . . . . . . . . . .> LIMIT 10;
-INFO  : Compiling command(queryId=hive_20250506015355_7cdc22ed-7ac5-43d2-9b8a-8b06699e2409): SELECT l.name, l.property_type, r.review_scores_rating, r.review_scores_cleanliness
+INFO  : Compiling command(queryId=hive_20250508184719_824223ca-7b48-4039-ada6-b5bda6fa6277): SELECT l.name, l.property_type, r.review_scores_rating, r.review_scores_cleanliness
 FROM listings_partitioned l
 JOIN review_scores_bucketed r ON l.id = r.listing_id
 LIMIT 10
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:l.name, type:string, comment:null), FieldSchema(name:l.property_type, type:string, comment:null), FieldSchema(name:r.review_scores_rating, type:decimal(20,7), comment:null), FieldSchema(name:r.review_scores_cleanliness, type:decimal(20,7), comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20250506015355_7cdc22ed-7ac5-43d2-9b8a-8b06699e2409 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20250508184719_824223ca-7b48-4039-ada6-b5bda6fa6277 : STAGE DEPENDENCIES:
   Stage-1 is a root stage [MAPRED]
   Stage-0 depends on stages: Stage-1 [FETCH]
 
 STAGE PLANS:
   Stage: Stage-1
     Tez
-      DagId: hive_20250506015355_7cdc22ed-7ac5-43d2-9b8a-8b06699e2409:3429
+      DagId: hive_20250508184719_824223ca-7b48-4039-ada6-b5bda6fa6277:11882
       Edges:
         Reducer 2 <- Map 1 (SIMPLE_EDGE), Map 3 (SIMPLE_EDGE)
-      DagName: hive_20250506015355_7cdc22ed-7ac5-43d2-9b8a-8b06699e2409:3429
+      DagName: hive_20250508184719_824223ca-7b48-4039-ada6-b5bda6fa6277:11882
       Vertices:
         Map 1 
             Map Operator Tree:
@@ -1243,7 +1243,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 4805405
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1266,7 +1266,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1297,7 +1297,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 907966
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1320,7 +1320,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1351,7 +1351,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 951392
-                    transient_lastDdlTime 1746485626
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1374,7 +1374,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1405,7 +1405,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 3703585
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1428,7 +1428,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1459,7 +1459,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 17830
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1482,7 +1482,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1513,7 +1513,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 2508173
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1536,7 +1536,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1567,7 +1567,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 7035091
-                    transient_lastDdlTime 1746485626
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1590,7 +1590,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1621,7 +1621,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 2407257
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1644,7 +1644,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1675,7 +1675,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 610007
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1698,7 +1698,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1729,7 +1729,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 856160
-                    transient_lastDdlTime 1746485626
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1752,7 +1752,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1783,7 +1783,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 807082
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1806,7 +1806,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1837,7 +1837,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 3719481
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1860,7 +1860,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1891,7 +1891,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 1894
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1914,7 +1914,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1945,7 +1945,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 1869373
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -1968,7 +1968,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -1999,7 +1999,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 5396948
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -2022,7 +2022,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -2053,7 +2053,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 304546
-                    transient_lastDdlTime 1746485626
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -2076,7 +2076,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -2107,7 +2107,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 7562495
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -2130,7 +2130,7 @@ STAGE PLANS:
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -2158,25 +2158,133 @@ STAGE PLANS:
 Map 3            container        INITED      1          0        0        1       0       0  
 Reducer 2        container        INITED      3          0        0        3       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 2.54 s     
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 1.04 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      3          0        3        0       0       0  
+[2KMap 1            container        INITED      3          0        0        3       0       0  
 Map 3            container        INITED      1          0        0        1       0       0  
 Reducer 2        container        INITED      3          0        0        3       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 3.54 s     
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 1.55 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      3          0        3        0       0       0  
-Map 3            container       RUNNING      1          0        1        0       0       0  
+[2KMap 1            container        INITED      3          0        0        3       0       0  
+Map 3            container        INITED      1          0        0        1       0       0  
 Reducer 2        container        INITED      3          0        0        3       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 4.55 s     
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 2.05 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      3          0        0        3       0       0  
+Map 3            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 2.56 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      3          0        0        3       0       0  
+Map 3            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 3.06 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      3          0        0        3       0       0  
+Map 3            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 3.57 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      3          0        0        3       0       0  
+Map 3            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 4.07 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      3          0        0        3       0       0  
+Map 3            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 4.57 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      3          0        0        3       0       0  
+Map 3            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 5.08 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      3          0        0        3       0       0  
+Map 3            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 5.58 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      3          0        0        3       0       0  
+Map 3            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 6.09 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING      3          0        1        2       0       0  
+Map 3            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 7.09 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING      3          0        1        2       0       0  
+Map 3            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 8.09 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING      3          0        1        2       0       0  
+Map 3            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 9.10 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING      3          0        2        1       0       0  
+Map 3            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 10.10 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -2185,7 +2293,7 @@ Reducer 2        container        INITED      3          0        0        3    
 Map 3            container       RUNNING      1          0        1        0       0       0  
 Reducer 2        container        INITED      3          0        0        3       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/03  [===>>-----------------------] 14%   ELAPSED TIME: 5.55 s     
+[2K[31;1mVERTICES: 00/03  [===>>-----------------------] 14%   ELAPSED TIME: 11.10 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -2194,25 +2302,25 @@ Reducer 2        container        INITED      3          0        0        3    
 Map 3            container       RUNNING      1          0        1        0       0       0  
 Reducer 2        container        INITED      3          0        0        3       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/03  [===>>-----------------------] 14%   ELAPSED TIME: 6.56 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[9A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1 ...        container       RUNNING      3          1        2        0       0       0  
-Map 3            container       RUNNING      1          0        1        0       0       0  
-Reducer 2        container        INITED      3          0        0        3       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/03  [===>>-----------------------] 14%   ELAPSED TIME: 7.56 s     
+[2K[31;1mVERTICES: 00/03  [===>>-----------------------] 14%   ELAPSED TIME: 12.10 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 ......     container       RUNNING      3          2        1        0       0       0  
-Map 3 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2        container       RUNNING      3          0        3        0       0       0  
+Map 3            container       RUNNING      1          0        1        0       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/03  [===========>>---------------] 42%   ELAPSED TIME: 8.57 s     
+[2K[31;1mVERTICES: 00/03  [=======>>-------------------] 28%   ELAPSED TIME: 13.11 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 ......     container       RUNNING      3          2        1        0       0       0  
+Map 3            container       RUNNING      1          0        1        0       0       0  
+Reducer 2        container        INITED      3          0        0        3       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [=======>>-------------------] 28%   ELAPSED TIME: 14.11 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -2221,7 +2329,7 @@ Reducer 2        container       RUNNING      3          0        3        0    
 Map 3 .......... container     SUCCEEDED      1          1        0        0       0       0  
 Reducer 2        container       RUNNING      3          0        3        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 02/03  [==============>>------------] 57%   ELAPSED TIME: 9.57 s     
+[2K[31;1mVERTICES: 02/03  [==============>>------------] 57%   ELAPSED TIME: 15.11 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -2230,7 +2338,16 @@ Reducer 2        container       RUNNING      3          0        3        0    
 Map 3 .......... container     SUCCEEDED      1          1        0        0       0       0  
 Reducer 2 ...... container     SUCCEEDED      3          3        0        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 10.22 s    
+[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 16.11 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      3          3        0        0       0       0  
+Map 3 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 2 ...... container     SUCCEEDED      3          3        0        0       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 16.12 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
                     name team19_projectdb.listings_partitioned
                     numFiles 7
@@ -2242,7 +2359,7 @@ Reducer 2 ...... container     SUCCEEDED      3          3        0        0    
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 16283093
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -2265,7 +2382,7 @@ Reducer 2 ...... container     SUCCEEDED      3          3        0        0    
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -2296,7 +2413,7 @@ Reducer 2 ...... container     SUCCEEDED      3          3        0        0    
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 1877
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -2319,7 +2436,7 @@ Reducer 2 ...... container     SUCCEEDED      3          3        0        0    
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -2350,7 +2467,7 @@ Reducer 2 ...... container     SUCCEEDED      3          3        0        0    
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 1904
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -2373,7 +2490,7 @@ Reducer 2 ...... container     SUCCEEDED      3          3        0        0    
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -2404,7 +2521,7 @@ Reducer 2 ...... container     SUCCEEDED      3          3        0        0    
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 1913
-                    transient_lastDdlTime 1746485625
+                    transient_lastDdlTime 1746719231
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -2427,7 +2544,7 @@ Reducer 2 ...... container     SUCCEEDED      3          3        0        0    
                       serialization.ddl struct listings_partitioned { string id, string listing_url, string scrape_id, date last_scraped, string name, decimal(20,7) host_id, string street, string property_type, string room_type, decimal(20,7) accommodates, decimal(20,7) bathrooms, decimal(20,7) bedrooms, decimal(20,7) beds, string price, decimal(20,7) number_of_reviews, decimal(20,7) reviews_per_month, string city}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                      transient_lastDdlTime 1746485607
+                      transient_lastDdlTime 1746719214
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.listings_partitioned
                   name: team19_projectdb.listings_partitioned
@@ -2506,7 +2623,7 @@ Reducer 2 ...... container     SUCCEEDED      3          3        0        0    
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 10487093
-                    transient_lastDdlTime 1746485632
+                    transient_lastDdlTime 1746719236
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -2533,7 +2650,7 @@ Reducer 2 ...... container     SUCCEEDED      3          3        0        0    
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                       totalSize 10487093
-                      transient_lastDdlTime 1746485632
+                      transient_lastDdlTime 1746719236
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team19_projectdb.review_scores_bucketed
                   name: team19_projectdb.review_scores_bucketed
@@ -2561,10 +2678,10 @@ Reducer 2 ...... container     SUCCEEDED      3          3        0        0    
                     File Output Operator
                       compressed: false
                       GlobalTableId: 0
-                      directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team19/77623a8f-416a-46bc-853c-c168988bf377/hive_2025-05-06_01-53-55_875_5573454959959627545-3012/-mr-10001/.hive-staging_hive_2025-05-06_01-53-55_875_5573454959959627545-3012/-ext-10002
+                      directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team19/b92d3d02-0e6a-4a05-bf9e-75ed25b36e28/hive_2025-05-08_18-47-19_161_9139021348656443191-9159/-mr-10001/.hive-staging_hive_2025-05-08_18-47-19_161_9139021348656443191-9159/-ext-10002
                       NumFilesPerFileSink: 1
                       Statistics: Num rows: 10 Data size: 24140 Basic stats: COMPLETE Column stats: NONE
-                      Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team19/77623a8f-416a-46bc-853c-c168988bf377/hive_2025-05-06_01-53-55_875_5573454959959627545-3012/-mr-10001/.hive-staging_hive_2025-05-06_01-53-55_875_5573454959959627545-3012/-ext-10002/
+                      Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team19/b92d3d02-0e6a-4a05-bf9e-75ed25b36e28/hive_2025-05-08_18-47-19_161_9139021348656443191-9159/-mr-10001/.hive-staging_hive_2025-05-08_18-47-19_161_9139021348656443191-9159/-ext-10002/
                       table:
                           input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                           output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -2588,21 +2705,21 @@ Reducer 2 ...... container     SUCCEEDED      3          3        0        0    
         ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20250506015355_7cdc22ed-7ac5-43d2-9b8a-8b06699e2409); Time taken: 0.832 seconds
-INFO  : Executing command(queryId=hive_20250506015355_7cdc22ed-7ac5-43d2-9b8a-8b06699e2409): SELECT l.name, l.property_type, r.review_scores_rating, r.review_scores_cleanliness
+INFO  : Completed compiling command(queryId=hive_20250508184719_824223ca-7b48-4039-ada6-b5bda6fa6277); Time taken: 0.31 seconds
+INFO  : Executing command(queryId=hive_20250508184719_824223ca-7b48-4039-ada6-b5bda6fa6277): SELECT l.name, l.property_type, r.review_scores_rating, r.review_scores_cleanliness
 FROM listings_partitioned l
 JOIN review_scores_bucketed r ON l.id = r.listing_id
 LIMIT 10
-INFO  : Query ID = hive_20250506015355_7cdc22ed-7ac5-43d2-9b8a-8b06699e2409
+INFO  : Query ID = hive_20250508184719_824223ca-7b48-4039-ada6-b5bda6fa6277
 INFO  : Total jobs = 1
 INFO  : Launching Job 1 out of 1
 INFO  : Starting task [Stage-1:MAPRED] in serial mode
-INFO  : Subscribed to counters: [] for queryId: hive_20250506015355_7cdc22ed-7ac5-43d2-9b8a-8b06699e2409
+INFO  : Subscribed to counters: [] for queryId: hive_20250508184719_824223ca-7b48-4039-ada6-b5bda6fa6277
 INFO  : Tez session hasn't been created yet. Opening session
 INFO  : Dag name: SELECT l.name, l.property_type, r.revie...10 (Stage-1)
-INFO  : Status: Running (Executing on YARN cluster with App id application_1745788519616_3243)
+INFO  : Status: Running (Executing on YARN cluster with App id application_1745788519616_11203)
 
-INFO  : Completed executing command(queryId=hive_20250506015355_7cdc22ed-7ac5-43d2-9b8a-8b06699e2409); Time taken: 16.879 seconds
+INFO  : Completed executing command(queryId=hive_20250508184719_824223ca-7b48-4039-ada6-b5bda6fa6277); Time taken: 19.987 seconds
 INFO  : OK
 +-----------------------------------------+------------------+-------------------------+------------------------------+
 |                 l.name                  | l.property_type  | r.review_scores_rating  | r.review_scores_cleanliness  |
@@ -2618,5 +2735,5 @@ INFO  : OK
 | Lovely new apt in Rome!                 | Apartment        | 97.0000000              | 10.0000000                   |
 | Charming typical Parisian studio AC     | Apartment        | 97.0000000              | 10.0000000                   |
 +-----------------------------------------+------------------+-------------------------+------------------------------+
-10 rows selected (17.76 seconds)
+10 rows selected (20.518 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> Closing: 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10001
