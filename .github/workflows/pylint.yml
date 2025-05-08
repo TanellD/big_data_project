@@ -1,0 +1,33 @@
+name: PyLint
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  pylint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Ensure all files are fetched
+        
+    - name: Run PyLint
+      uses: Silleellie/pylint-github-action@v2.1
+      with:
+        lint-path: |
+          data
+          models
+          notebooks
+          output
+          scripts
+          sql
+          main.sh
+        python-version: "3.11"  # Note: quoted version number
+        requirements-path: requirements.txt
+        readme-path: README.md
+        badge-text: PyLint
+        color-bad-score: red
+        color-ok-score: orange
+        color-good-score: brightgreen
