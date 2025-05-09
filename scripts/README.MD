@@ -15,7 +15,6 @@ This folder contains all sh and py scripts
 
 * Stage 3
     * model.py
-    * run_model.sh
     * stage3.sh
 
 * Stage 4

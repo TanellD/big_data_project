@@ -1,11 +1,9 @@
 import os
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import to_date, year, month, dayofmonth
-from pyspark.sql.functions import sin, cos, pi
+from pyspark.sql.functions import to_date, year, month, dayofmonth, sin, cos, pi
 from pyspark.ml import Transformer, Pipeline
 from pyspark.ml.param.shared import HasInputCol, HasOutputCols
-from pyspark.ml.feature import StringIndexer, OneHotEncoder, VectorAssembler
-from pyspark.ml.feature import Word2Vec, RegexTokenizer, VectorIndexer
+from pyspark.ml.feature import StringIndexer, OneHotEncoder, VectorAssembler, Word2Vec, RegexTokenizer, VectorIndexer
 from pyspark.ml.regression import LinearRegression
 from pyspark.ml.evaluation import RegressionEvaluator
 from pyspark.ml.tuning import ParamGridBuilder, CrossValidator
@@ -59,19 +57,15 @@ def main():
     spark = SparkSession.builder\
         .appName("{} - spark ML".format(team))\
         .master("yarn")\
-        .config("hive.metastore.uris",
-                "thrift://hadoop-02.uni.innopolis.ru:9883")\
+        .config("hive.metastore.uris", "thrift://hadoop-02.uni.innopolis.ru:9883")\
         .config("spark.sql.warehouse.dir", warehouse)\
         .config("spark.sql.avro.compression.codec", "snappy")\
         .enableHiveSupport()\
         .getOrCreate()
     spark.sql("USE team19_projectdb").show()
-    hosts_table = 'team19_projectdb.hosts_bucketed'
-    listings_table = 'team19_projectdb.listings_partitioned'
-    review_scores = 'team19_projectdb.review_scores_bucketed'
-    hosts_bucketed = spark.read.format("avro").table(hosts_table)
-    listings_partitioned = spark.read.format("avro").table(listings_table)
-    review_scores_bucketed = spark.read.format("avro").table(review_scores)
+    hosts_bucketed = spark.read.format("avro").table('team19_projectdb.hosts_bucketed')
+    listings_partitioned = spark.read.format("avro").table('team19_projectdb.listings_partitioned')
+    review_scores_bucketed = spark.read.format("avro").table('team19_projectdb.review_scores_bucketed')
     result_df = (
         listings_partitioned
         .join(
@@ -169,18 +163,10 @@ def main():
         inputCol="city_tokens",
         outputCol="city_vec"
     )
-    indexers = [StringIndexer(inputCol=c, outputCol="{0}_indexed".format(c))
-                .setHandleInvalid("skip")
-                for c in categoricalCols]
-    encoders = [OneHotEncoder(inputCol=indexer.getOutputCol(),
-                              outputCol="{0}_encoded"
-                              .format(indexer.getOutputCol()))
-                for indexer in indexers]
-    assembler = VectorAssembler(inputCols=[encoder.getOutputCol()
-                                           for encoder in encoders] +
-                                others, outputCol="features")
-    pipeline = Pipeline(stages=[tokenizer, word2Vec] + indexers +
-                        encoders + [assembler])
+    indexers = [StringIndexer(inputCol=c, outputCol="{0}_indexed".format(c)).setHandleInvalid("skip") for c in categoricalCols]
+    encoders = [OneHotEncoder(inputCol=indexer.getOutputCol(), outputCol="{0}_encoded".format(indexer.getOutputCol())) for indexer in indexers]
+    assembler = VectorAssembler(inputCols=[encoder.getOutputCol() for encoder in encoders] + others, outputCol= "features")
+    pipeline = Pipeline(stages=[tokenizer, word2Vec] + indexers + encoders + [assembler])
 
     model = pipeline.fit(df_encoded)
     data = model.transform(df_encoded)
@@ -195,8 +181,7 @@ def main():
                                    outputCol="indexedFeatures",
                                    maxCategories=4).fit(data)
     transformed = featureIndexer.transform(data)
-    transformed = transformed.withColumn("label",
-                                         F.col("label").cast("double"))
+    transformed = transformed.withColumn("label", F.col("label").cast("double"))
     #  split the data into 60% training and 40% test (it is not stratified)
     (train_data, test_data) = transformed.randomSplit([0.6, 0.4], seed=10)
     train_data.select("features", "label")\
@@ -247,11 +232,8 @@ def main():
     metrics_df = spark.createDataFrame(metrics_data)
     print("starting saving 1st model")
     metrics_df.coalesce(1).write.mode("overwrite").format("csv") \
-        .option("header", "true") \
-        .save("project/big_data_project/output/" +
-              "Non_fine_tuned_linear_regression_metrics")
-    run("hdfs dfs -get project/big_data_project/output/" +
-        "Non_fine_tuned_linear_regression_metrics ./output/model1_no_tune")
+        .option("header", "true").save("project/big_data_project/output/Non_fine_tuned_linear_regression_metrics")
+    run("hdfs dfs -get project/big_data_project/output/Non_fine_tuned_linear_regression_metrics ./output/model1_no_tune")
     print("saving 1st model done")
     train_data.cache()
     grid = ParamGridBuilder()\
@@ -287,8 +269,7 @@ def main():
         .mode("overwrite") \
         .option("header", "true") \
         .csv("project/big_data_project/output/cv_results_lr")
-    run("hdfs dfs -get project/big_data_project/output/cv_results_lr " +
-        "./output/cv_results_lr")
+    run("hdfs dfs -get project/big_data_project/output/cv_results_lr ./output/cv_results_lr")
     model1 = bestModel
     model1.write().overwrite().save("project/big_data_project/models/model1")
     # Run it from root directory of the repository
@@ -305,8 +286,7 @@ def main():
         .save("project/big_data_project/output/model1_predictions.csv")
 
     # Run it from root directory of the repository
-    run("hdfs dfs -cat project/big_data_project/output/" +
-        "model1_predictions.csv/*.csv > ./output/model1_predictions.csv")
+    run("hdfs dfs -cat project/big_data_project/output/model1_predictions.csv/*.csv > ./output/model1_predictions.csv")
 
     # Evaluate the performance of the model
     evaluator1_rmse = RegressionEvaluator(labelCol="label",
@@ -319,18 +299,15 @@ def main():
     rmse1 = evaluator1_rmse.evaluate(predictions)
     r21 = evaluator1_r2.evaluate(predictions)
 
-    print(f"Root Mean Squared Error (RMSE) on test data = {rmse1}")
-    print(f"R^2 on test data = {r21}")
+    print("Root Mean Squared Error (RMSE) on test data = {}".format(rmse1))
+    print("R^2 on test data = {}".format(r21))
 
     metrics_data = [{"RMSE": rmse1, "R2": r21, "model": "linear_reg_tuned"}]
     metrics_df = spark.createDataFrame(metrics_data)
     print("model 3")
     metrics_df.coalesce(1).write.mode("overwrite").format("csv") \
-        .option("header", "true") \
-        .save("project/big_data_project/output/" +
-              "fine_tuned_linear_regression_metrics")
-    run("hdfs dfs -get project/big_data_project/output/" +
-        "fine_tuned_linear_regression_metrics ./output/model1_tune")
+        .option("header", "true").save("project/big_data_project/output/fine_tuned_linear_regression_metrics")
+    run("hdfs dfs -get project/big_data_project/output/fine_tuned_linear_regression_metrics ./output/model1_tune")
     print("model 3 done")
     from pyspark.ml.regression import GBTRegressor
     gbt = GBTRegressor(maxIter=10)
@@ -347,23 +324,22 @@ def main():
     rmse2 = evaluator2_rmse.evaluate(predictions)
     r22 = evaluator2_r2.evaluate(predictions)
 
-    print(f"Root Mean Squared Error (RMSE) on test data = {rmse2}")
-    print(f"R^2 on test data = {r22}")
+    print("Root Mean Squared Error (RMSE) on test data = {}".format(rmse2))
+    print("R^2 on test data = {}".format(r22))
     # save metrics
     metrics_data = [{"RMSE": rmse2, "R2": r22, "model": "GBT_no_tune"}]
     metrics_df = spark.createDataFrame(metrics_data)
+    # metrics_df.write.format("json").mode("overwrite").save(f"project/big_data_project/output/{metrics_filename}")
     metrics_df.coalesce(1).write.mode("overwrite").format("csv") \
-        .option("header", "true") \
-        .save("project/big_data_project/output/GBT_no_tune")
-    run("hdfs dfs -get project/big_data_project/output/GBT_no_tune " +
-        "./output/model2_no_tune")
+        .option("header", "true").save("project/big_data_project/output/GBT_no_tune")
+    run("hdfs dfs -get project/big_data_project/output/GBT_no_tune ./output/model2_no_tune")
     model_gbt.params
     grid = ParamGridBuilder()\
         .addGrid(gbt.maxDepth, [3, 5])\
         .addGrid(gbt.minInstancesPerNode, [1, 2])\
         .build()
-    cv = CrossValidator(estimator=gbt,
-                        estimatorParamMaps=grid,
+    cv = CrossValidator(estimator=gbt, 
+                        estimatorParamMaps=grid, 
                         evaluator=evaluator2_rmse,
                         parallelism=5,
                         numFolds=3)
@@ -384,8 +360,7 @@ def main():
         .mode("overwrite") \
         .option("header", "true") \
         .csv("project/big_data_project/output/cv_results_gbt")
-    run("hdfs dfs -get project/big_data_project/output/cv_results_gbt " +
-        "./output/cv_results_gbt")
+    run("hdfs dfs -get project/big_data_project/output/cv_results_gbt ./output/cv_results_gbt")
     model2 = bestModel
     model2.write().overwrite().save("project/big_data_project/models/model2")
 
@@ -402,8 +377,7 @@ def main():
         .save("project/big_data_project/output/model2_predictions.csv")
 
     # Run it from root directory of the repository
-    run("hdfs dfs -cat project/big_data_project/output/" +
-        "model2_predictions.csv/*.csv > ./output/model2_predictions.csv")
+    run("hdfs dfs -cat project/big_data_project/output/model2_predictions.csv/*.csv > ./output/model2_predictions.csv")
     # Evaluate the performance of the model
     evaluator2_rmse = RegressionEvaluator(labelCol="label",
                                           predictionCol="prediction",
@@ -413,16 +387,15 @@ def main():
                                         metricName="r2")
     rmse22 = evaluator2_rmse.evaluate(predictions)
     r22 = evaluator2_r2.evaluate(predictions)
-    print(f"Root Mean Squared Error (RMSE) on test data = {rmse2}")
-    print(f"R^2 on test data = {r22}")
+    print("Root Mean Squared Error (RMSE) on test data = {}".format(rmse2))
+    print("R^2 on test data = {}".format(r22))
     metrics_data = [{"RMSE": rmse22, "R2": r22, "model": "GBT_tune"}]
     metrics_df = spark.createDataFrame(metrics_data)
+    # metrics_df.write.format("json").mode("overwrite").save(f"project/big_data_project/output/{metrics_filename}")
     print("model 4 start")
     metrics_df.coalesce(1).write.mode("overwrite").format("csv") \
-        .option("header", "true") \
-        .save("project/big_data_project/output/GBT_tune")
-    run("hdfs dfs -get project/big_data_project/output/GBT_tune " +
-        "./output/model2_tune")
+        .option("header", "true").save("project/big_data_project/output/GBT_tune")
+    run("hdfs dfs -get project/big_data_project/output/GBT_tune ./output/model2_tune")
     print("model 4 done")
     models = [[str(model1), rmse1, r21], [str(model2), rmse22, r22]]
     df = spark.createDataFrame(models, ["model", "RMSE", "R2"])
@@ -435,8 +408,7 @@ def main():
         .option("header", "true")\
         .save("project/big_data_project/output/evaluation.csv")
     # Run it from root directory of the repository
-    run("hdfs dfs -cat project/big_data_project/output/" +
-        "evaluation.csv/*.csv > ./output/evaluation.csv")
+    run("hdfs dfs -cat project/big_data_project/output/evaluation.csv/*.csv > ./output/evaluation.csv")
 
 
 if __name__ == "__main__":
